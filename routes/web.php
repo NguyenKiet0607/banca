@@ -13,9 +13,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', function () {
-    return view('client/login');
+Route::get('/login', 'App\Http\Controllers\User\AuthController@showLoginForm')->name('user.login');
+Route::post('/login', 'App\Http\Controllers\User\AuthController@login')->name('action_login');
+Route::middleware('user.login')->group(function (){
+    Route::get('/', 'App\Http\Controllers\User\GameController@index');
+    Route::get('/slot/{slug}', 'App\Http\Controllers\User\GameController@slot');
+    Route::post('/logout', 'App\Http\Controllers\User\AuthController@logout');
+    Route::post('/register', 'App\Http\Controllers\User\UserController@store');
+    Route::prefix('api')->group(function() {
+        Route::get('/user/current', 'App\Http\Controllers\User\UserController@profile');
+        Route::get('/games', 'App\Http\Controllers\User\GameController@games');
+        Route::get('/game/detail/{slug}', 'App\Http\Controllers\User\GameController@detailGame');
+        Route::post('/games/percentage', 'App\Http\Controllers\User\GameController@percentage');
+    });
+    
 });
-Route::get('/', function () {
-    return view('client/index');
+
+
+Route::get('/admin/login', 'App\Http\Controllers\Admin\AuthController@showLoginForm')->name('admin.login');
+Route::post('/admin/login', 'App\Http\Controllers\Admin\AuthController@login')->name('admin.action_login');
+Route::middleware('admin.login')->group(function (){
+    Route::get('/admin', function () {
+        return view('admin.index');
+    });
+    //logout admin
+    Route::post('/admin/logout', 'App\Http\Controllers\Admin\AuthController@logout')->name('admin.logout');
+    Route::resource('/admin/admins', 'App\Http\Controllers\Admin\AdminController')->middleware('admin.super');
+    Route::resource('/admin/users', 'App\Http\Controllers\Admin\UserController');
+    Route::resource('/admin/codes', 'App\Http\Controllers\Admin\CodeController');
+    //add credit
+    Route::post('/admin/credit/add', 'App\Http\Controllers\Admin\CreditController@add')->name('admin.credit.add');
 });

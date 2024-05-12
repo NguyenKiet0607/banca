@@ -7,12 +7,20 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <meta name="api-token" content="$2y$10$TLEJMrpGb0BMtJSFZbo2k.z3Ys1jJqr9pxIe.WDuNB3QzxAHDn2zO">
+    <meta name="api-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" url="{{ asset('js/home.js') }}">
     <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.26tY-h6gH9w.L.W.O/am=BgM/d=0/rs=AN8SPfowrRiAotkQD9r4k3ANeQYGsCLZ7g/m=el_main_css">
     <script type="text/javascript" charset="UTF-8" src="https://translate.googleapis.com/_/translate_http/_/js/k=translate_http.tr.vi.sLjgQWtgXww.O/am=ABA/d=1/exm=el_conf/ed=1/rs=AN8SPfoFmdt6kQRZzMVuF1nZmGEydlZucw/m=el_main"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="api-token"]').attr('content')
+            }
+        });
+    </script>
 </head>
 
 <body style="position: relative; min-height: 100%; top: 0px;">
@@ -178,10 +186,10 @@
                 <div class="header-col-R">
                     <div class="header-group-btn">
                         <div class="heeader-btn_item btn-user notranslate">
-                            <p>vietduc2024</p>
+                            <p></p>
                         </div>
                         <div class="heeader-btn_item btn-credit">
-                            <p>Xu 21</p>
+                            <p>Xu </p>
                         </div>
                         <div class="heeader-btn_item btn-help">
                             <p>Nạp xu</p>
@@ -208,155 +216,7 @@
                     <h1>SLOT</h1>
                 </div>
                 <div class="slot_wrapper">
-                    <a class="item" href="http://hackslot.win/slot/pg2-dien-tu">
-                        <img class="img-main" src="{{ asset('images/pg.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/pg.png') }}" alt="">
-                        <div class="item-name">PG2 Điện Tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/spribe-dien-tu">
-                        <img class="img-main" src="{{ asset('images/spribe.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/spribe.png') }}" alt="">
-                        <div class="item-name">Spribe Điện tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/jili-dien-tu">
-                        <img class="img-main" src="{{ asset('images/jl.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/jl.png') }}" alt="">
-                        <div class="item-name">JILI Điện Tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/ka-dien-tu">
-                        <img class="img-main" src="{{ asset('images/ka.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/ka.png') }}" alt="">
-                        <div class="item-name">KA Điện tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/tp-dien-tu">
-                        <img class="img-main" src="{{ asset('images/tp.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/tp.png') }}" alt="">
-                        <div class="item-name">TP Điện Tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/ps-dien-tu">
-                        <img class="img-main" src="{{ asset('images/ps.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/ps.png') }}" alt="">
-                        <div class="item-name">PS Điện tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/fc-dien-tu">
-                        <img class="img-main" src="{{ asset('images/fc.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/fc.png') }}" alt="">
-                        <div class="item-name">FC Điện Tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/r88-dien-tu">
-                        <img class="img-main" src="{{ asset('images/r88.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/r88.png') }}" alt="">
-                        <div class="item-name">R88 Điện tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/pp-dien-tu">
-                        <img class="img-main" src="{{ asset('images/pp.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/pp.png') }}" alt="">
-                        <div class="item-name">PP Điện Tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/pt-dien-tu">
-                        <img class="img-main" src="{{ asset('images/pt.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/pt.png') }}" alt="">
-                        <div class="item-name">PT Điện tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/ftg-dien-tu">
-                        <img class="img-main" src="{{ asset('images/ftg.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/ftg.png') }}" alt="">
-                        <div class="item-name">FTG Điện tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/mg-dien-tu">
-                        <img class="img-main" src="{{ asset('images/mg.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/mg.png') }}" alt="">
-                        <div class="item-name">MG Điện Tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/cq9-dien-tu">
-                        <img class="img-main" src="{{ asset('images/cq9.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/cq9.png') }}" alt="">
-                        <div class="item-name">CQ9 Điện Tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/ne-dien-tu">
-                        <img class="img-main" src="{{ asset('images/ne.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/ne.png') }}" alt="">
-                        <div class="item-name">NE Điện tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/jdb-dien-tu">
-                        <img class="img-main" src="{{ asset('images/jdb.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/jdb.png') }}" alt="">
-                        <div class="item-name">JDB Điện Tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/hb-dien-tu">
-                        <img class="img-main" src="{{ asset('images/hb.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/hb.png') }}" alt="">
-                        <div class="item-name">HB Điện tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/bng-dien-tu">
-                        <img class="img-main" src="{{ asset('images/bng.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/bng.png') }}" alt="">
-                        <div class="item-name">BNG Điện Tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/gem-dien-tu">
-                        <img class="img-main" src="{{ asset('images/gem.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/gem.png') }}" alt="">
-                        <div class="item-name">Gem Điện tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/va-dien-tu">
-                        <img class="img-main" src="{{ asset('images/va.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/va.png') }}" alt="">
-                        <div class="item-name">VA Điện Tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/t1-dien-tu">
-                        <img class="img-main" src="{{ asset('images/t1.png') }}" alt="">
-                        <img class="img-resize" src="{{ asset('images/t1.png') }}" alt="">
-                        <div class="item-name">T1 Điện tử</div>
-                    </a>
-                    <a class="item" href="http://hackslot.win/slot/afb-dien-tu"><img class="img-main" src="{{ asset('images/afb.png') }}" alt=""><img class="img-resize" src="{{ asset('images/afb.png') }}" alt="">
-                        <div class="item-name">AFB Điện tử</div>
-                    </a><a class="item" href="http://hackslot.win/slot/ns-dien-tu"><img class="img-main" src="{{ asset('images/ns.png') }}" alt=""><img class="img-resize" src="{{ asset('images/ns.png') }}" alt="">
-                        <div class="item-name">NS Điện tử</div>
-                    </a><a class="item" href="http://hackslot.win/slot/mw-dien-tu"><img class="img-main" src="{{ asset('images/mw.png') }}" alt=""><img class="img-resize" src="{{ asset('images/mw.png') }}" alt="">
-                        <div class="item-name">MW Điện tử</div>
-                    </a><a class="item" href="http://hackslot.win/slot/yb-dien-tu"><img class="img-main" src="{{ asset('images/yb.png') }}" alt=""><img class="img-resize" src="{{ asset('images/yb.png') }}" alt="">
-                        <div class="item-name">YB Điện tử</div>
-                    </a><a class="item" href="http://hackslot.win/slot/askme-dien-tu"><img class="img-main" src="{{ asset('images/askme.png') }}" alt=""><img class="img-resize" src="{{ asset('images/askme.png') }}" alt="">
-                        <div class="item-name">Askme Điện tử</div>
-                    </a><a class="item" href="http://hackslot.win/slot/rtg-dien-tu"><img class="img-main" src="{{ asset('images/rtg.png') }}" alt=""><img class="img-resize" src="{{ asset('images/rtg.png') }}" alt="">
-                        <div class="item-name">RTG Điện tử</div>
-                    </a><a class="item" href="http://hackslot.win/slot/jili-ban-ca"><img class="img-main" src="{{ asset('images/jili.png') }}" alt=""><img class="img-resize" src="{{ asset('images/jili.png') }}" alt="">
-                        <div class="item-name">JiLi Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/bg-ban-ca"><img class="img-main" src="{{ asset('images/bg.png') }}" alt=""><img class="img-resize" src="{{ asset('images/bg.png') }}" alt="">
-                        <div class="item-name">BG Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/tp-ban-ca"><img class="img-main" src="{{ asset('images/tp.png') }}" alt=""><img class="img-resize" src="{{ asset('images/tp.png') }}" alt="">
-                        <div class="item-name">TP Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/jdb-ban-ca"><img class="img-main" src="{{ asset('images/jdb.png') }}" alt=""><img class="img-resize" src="{{ asset('images/jdb.png') }}" alt="">
-                        <div class="item-name">JDB Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/ka-ban-ca"><img class="img-main" src="{{ asset('images/ka.png') }}" alt=""><img class="img-resize" src="{{ asset('images/ka.png') }}" alt="">
-                        <div class="item-name">KA Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/fc-ban-ca"><img class="img-main" src="{{ asset('images/fc.png') }}" alt=""><img class="img-resize" src="{{ asset('images/fc.png') }}" alt="">
-                        <div class="item-name">FC Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/ps-ban-ca"><img class="img-main" src="{{ asset('images/ps.png') }}" alt=""><img class="img-resize" src="{{ asset('images/ps.png') }}" alt="">
-                        <div class="item-name">PS Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/mg-ban-ca"><img class="img-main" src="{{ asset('images/mg.png') }}" alt=""><img class="img-resize" src="{{ asset('images/mg.png') }}" alt="">
-                        <div class="item-name">MG Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/r88-ban-ca"><img class="img-main" src="{{ asset('images/r88.png') }}" alt=""><img class="img-resize" src="{{ asset('images/r88.png') }}" alt="">
-                        <div class="item-name">R88 Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/ftg-ban-ca"><img class="img-main" src="{{ asset('images/ftg.png') }}" alt=""><img class="img-resize" src="{{ asset('images/ftg.png') }}" alt="">
-                        <div class="item-name">FTG Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/va-ban-ca"><img class="img-main" src="{{ asset('images/va.png') }}" alt=""><img class="img-resize" src="{{ asset('images/va.png') }}" alt="">
-                        <div class="item-name">VA Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/rtg-ban-ca"><img class="img-main" src="{{ asset('images/rtg.png') }}" alt=""><img class="img-resize" src="{{ asset('images/rtg.png') }}" alt="">
-                        <div class="item-name">RTG Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/yb-ban-ca"><img class="img-main" src="{{ asset('images/yb.png') }}" alt=""><img class="img-resize" src="{{ asset('images/yb.png') }}" alt="">
-                        <div class="item-name">YB Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/askme-ban-ca"><img class="img-main" src="{{ asset('images/askme.png') }}" alt=""><img class="img-resize" src="{{ asset('images/askme.png') }}" alt="">
-                        <div class="item-name">Askme Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/ns-ban-ca"><img class="img-main" src="{{ asset('images/ns.png') }}" alt=""><img class="img-resize" src="{{ asset('images/ns.png') }}" alt="">
-                        <div class="item-name">NS Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/bsp-ban-ca"><img class="img-main" src="{{ asset('images/bsp.png') }}" alt=""><img class="img-resize" src="{{ asset('images/bsp.png') }}" alt="">
-                        <div class="item-name">BSP Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/rg-ban-ca"><img class="img-main" src="{{ asset('images/rg.png') }}" alt=""><img class="img-resize" src="{{ asset('images/rg.png') }}" alt="">
-                        <div class="item-name">RG Bắn cá</div>
-                    </a><a class="item" href="http://hackslot.win/slot/cq9-ban-ca"><img class="img-main" src="{{ asset('images/cq9.png') }}" alt=""><img class="img-resize" src="{{ asset('images/cq9.png') }}" alt="">
-                        <div class="item-name">CQ9 Bắn cá</div>
-                    </a></div>
+                </div>
             </div>
         </section>
     </div>

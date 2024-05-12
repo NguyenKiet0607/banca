@@ -11141,11 +11141,11 @@
                                         href: "/slot/".concat(n.game.slug)
                                     }, [gi("img", {
                                         class: "img-main",
-                                        src: n.game.image_url,
+                                        src: "/images/"+n.game.image_url,
                                         alt: ""
                                     }, null, 8, Ng), gi("img", {
                                         class: "img-resize",
-                                        src: n.game.image_url,
+                                        src: "/images/"+n.game.image_url,
                                         alt: ""
                                     }, null, 8, Ig), gi("div", Pg, de(n.game.name), 1)], 8, Rg)
                                 }]

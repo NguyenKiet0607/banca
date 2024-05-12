@@ -6,7 +6,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <meta name="api-token" content="">
+    <meta name="api-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
@@ -14,6 +14,14 @@
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.26tY-h6gH9w.L.W.O/am=BgM/d=0/rs=AN8SPfowrRiAotkQD9r4k3ANeQYGsCLZ7g/m=el_main_css">
     <script type="text/javascript" charset="UTF-8" src="https://translate.googleapis.com/_/translate_http/_/js/k=translate_http.tr.vi.sLjgQWtgXww.O/am=ABA/d=1/exm=el_conf/ed=1/rs=AN8SPfoFmdt6kQRZzMVuF1nZmGEydlZucw/m=el_main"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="api-token"]').attr('content')
+            }
+        });
+    </script>
 </head>
 <body style="position: relative; min-height: 100%; top: 0px;">
 <div id="app" data-v-app="">

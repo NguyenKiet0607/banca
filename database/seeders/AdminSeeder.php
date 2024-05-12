@@ -12,6 +12,14 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        //Create superadmin
+        \App\Models\Admin::create([
+            'email' => 'superadmin@gmail.com',
+            'username' => 'superadmin',
+            'coin' => 0,
+            'role' => 1,
+            'status' => true,
+            'password' => bcrypt('123456'),
+        ]);
     }
 }

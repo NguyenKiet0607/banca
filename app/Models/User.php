@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -18,9 +19,14 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
         'email',
+        'username',
+        'role',
         'password',
+        'status',
+        'coint',
+        'staff_id',
+        'phone'
     ];
 
     /**
@@ -42,4 +48,36 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Get list
+     *
+     * @param array $condition
+     * @param array $select
+     * @return \Illuminate\Database\Eloquent\Builder || null
+     */
+    public static function getAll(array $condition = [], array $select = [], $returnQuery = false)
+    {
+        $query = self::query();
+        $query->select($select);
+
+        if (!empty($condition['id'])) {
+            $query->where('id', $condition['id']);
+        }
+
+        if (!empty($condition['name'])) {
+            $query->where('username', '=', $condition['name'])
+                ->orWhere('name', '=', $condition['name']);
+        }
+
+        //admin chi tim duoc theo ten, khong list duoc
+        if (Auth::guard('admin')->user()->role == 2 && empty($condition['name'])){
+            $query->where('username', '=', '');
+        }
+
+        if($returnQuery) {
+            return $query;
+        }
+        return $query->all();
+    }
 }
