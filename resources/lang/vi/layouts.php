@@ -54,5 +54,16 @@ return [
     'btn_ok' => 'Đồng ý',
     'update' => 'Cập nhật',
     'create' => 'Tạo mới',
+    "games" => [
+        "name" => "Tên",
+        "slug" => "Slug",
+        "image" => "Ảnh",
+        "parent" => "Game cha",
+        "title" => "Quản lý game",
+        "title_search" => "Tìm kiếm game",
+        "placeholder_search" => "Nhập tên game",
+        'priority' => 'Vị trí',
+        'percent' => 'Tỷ lệ'
+    ],
 ];
 

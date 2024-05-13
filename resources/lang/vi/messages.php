@@ -25,6 +25,12 @@ return [
         "created_success" => "Tạo code thành công",
         "updated_success" => "Cập nhật code thành công",
     ],
+    "games" => [
+        "created_success" => "Tạo game thành công",
+        "updated_success" => "Cập nhật game thành công",
+        "message_delete" => "Bạn có chắc chắn muốn xóa game này?",
+        "deleted_success" => "Xóa game thành công",
+    ],
     "delete_error" => "Xóa thất bại",
     "update_error" => "Cập nhật thất bại",
     "credit_less_than_0" => "Số tiền phải lớn hơn hoặc bằng 0"

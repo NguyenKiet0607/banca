@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class CheckAdmin
+class CheckDevelop
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,9 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        //Check if user logged in is super admin
-        if (!in_array(auth('admin')->user()->role, [2, 1])) {
-            return redirect()->back()->with('error', __('messages.admins.not_authorize'));
+        //Check if admin is logged in
+        if (auth('admin')->user()->role !== 3) {
+            return redirect()->back();
         }
         return $next($request);
     }

@@ -26,12 +26,11 @@ class UserController extends Controller
     //Create a new user
     public function store(Request $request)
     {
-        dd($request->all());
         //Validate data
         $input = $request->validate([
             'username' => 'required|unique:users',
             'phone' => 'required',
-            'password' => 'required',
+            'password' => 'required|confirmed',
             'code' => 'nullable'
         ]);
 

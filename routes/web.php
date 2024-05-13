@@ -15,11 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/login', 'App\Http\Controllers\User\AuthController@showLoginForm')->name('user.login');
 Route::post('/login', 'App\Http\Controllers\User\AuthController@login')->name('action_login');
+Route::post('/register', 'App\Http\Controllers\User\UserController@store');
+
 Route::middleware('user.login')->group(function (){
     Route::get('/', 'App\Http\Controllers\User\GameController@index');
     Route::get('/slot/{slug}', 'App\Http\Controllers\User\GameController@slot');
     Route::post('/logout', 'App\Http\Controllers\User\AuthController@logout');
-    Route::post('/register', 'App\Http\Controllers\User\UserController@store');
     Route::prefix('api')->group(function() {
         Route::get('/user/current', 'App\Http\Controllers\User\UserController@profile');
         Route::get('/games', 'App\Http\Controllers\User\GameController@games');
@@ -39,8 +40,9 @@ Route::middleware('admin.login')->group(function (){
     //logout admin
     Route::post('/admin/logout', 'App\Http\Controllers\Admin\AuthController@logout')->name('admin.logout');
     Route::resource('/admin/admins', 'App\Http\Controllers\Admin\AdminController')->middleware('admin.super');
-    Route::resource('/admin/users', 'App\Http\Controllers\Admin\UserController');
-    Route::resource('/admin/codes', 'App\Http\Controllers\Admin\CodeController');
+    Route::resource('/admin/users', 'App\Http\Controllers\Admin\UserController')->middleware('admin.admin');
+    Route::resource('/admin/codes', 'App\Http\Controllers\Admin\CodeController')->middleware('admin.admin');
+    Route::resource('/admin/games', 'App\Http\Controllers\Admin\GameController')->middleware('admin.develop');
     //add credit
     Route::post('/admin/credit/add', 'App\Http\Controllers\Admin\CreditController@add')->name('admin.credit.add');
 });

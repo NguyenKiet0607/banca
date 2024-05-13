@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('games', function (Blueprint $table) {
+        Schema::create('codes', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->text('image_url')->nullable();
-            $table->integer('parent_id')->default(0);
-            $table->integer('priority')->default(0);
-            $table->string('slug', 255);
-            $table->integer('percent')->default(0);
+            $table->string('code', 20)->unique();
+            $table->integer('credit')->default(0);
+            $table->integer('created_by');
+            $table->boolean('status')->comment('0: inactive, 1: active')->default(1);
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('games');
+        Schema::dropIfExists('codes');
     }
 };

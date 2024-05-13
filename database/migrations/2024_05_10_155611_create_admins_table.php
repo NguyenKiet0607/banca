@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('email', 50);
             $table->string('username');
             $table->integer('coin')->default(0);
-            $table->tinyInteger('role')->comment('1: superadmin, 2: admin');
+            $table->tinyInteger('role')->comment('1: superadmin, 2: admin, 3: develop');
             $table->string('password', 255);
             $table->boolean('status')->default(true);
             $table->timestamps();

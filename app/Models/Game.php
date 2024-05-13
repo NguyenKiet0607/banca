@@ -19,7 +19,8 @@ class Game extends Model
         'image_url',
         'parent_id',
         'priority',
-        'slug'
+        'slug',
+        'percent'
     ];
 
     public function getGame($condition=[], $returnQuery = false)
@@ -30,11 +31,15 @@ class Game extends Model
             $query->where('id', $condition['id']);
         }
 
+        if (!empty($condition['name'])) {
+            $query->where('name', 'LIKE', '%'.$condition['name'].'%');
+        }
+
         if (!empty($condition['slug'])) {
             $query->where('slug', $condition['slug']);
         }
 
-        if (!empty($condition['parent_id'])) {
+        if (isset($condition['parent_id']) ) {
             $query->where('parent_id', $condition['parent_id']);
         }
 

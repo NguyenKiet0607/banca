@@ -23,7 +23,7 @@
 @elseif ($sidebarItemHelper->isLink($item))
 
     {{-- Link --}}
-    @if(!isset($item['role']) || \Illuminate\Support\Facades\Auth::guard('admin')->user()->role == $item['role'])
+    @if(!isset($item['role']) || in_array(\Illuminate\Support\Facades\Auth::guard('admin')->user()->role, $item['role']))
         @include('adminlte::partials.sidebar.menu-item-link')
     @endif
 
