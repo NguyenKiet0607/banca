@@ -20,9 +20,11 @@ Route::post('/register', 'App\Http\Controllers\User\UserController@store');
 Route::middleware('user.login')->group(function (){
     Route::get('/', 'App\Http\Controllers\User\GameController@index');
     Route::get('/slot/{slug}', 'App\Http\Controllers\User\GameController@slot');
+    Route::get('/game/{slug}/{id}', 'App\Http\Controllers\User\GameController@detailSlot');
     Route::post('/logout', 'App\Http\Controllers\User\AuthController@logout');
     Route::prefix('api')->group(function() {
         Route::get('/user/current', 'App\Http\Controllers\User\UserController@profile');
+        Route::post('/user/decrease-coin', 'App\Http\Controllers\User\UserController@decreaseCoin');
         Route::get('/games', 'App\Http\Controllers\User\GameController@games');
         Route::get('/game/detail/{slug}', 'App\Http\Controllers\User\GameController@detailGame');
         Route::post('/games/percentage', 'App\Http\Controllers\User\GameController@percentage');

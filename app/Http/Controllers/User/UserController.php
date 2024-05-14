@@ -23,6 +23,19 @@ class UserController extends Controller
         ]);
     }
 
+    //Decrease Coin
+    public function decreaseCoin()
+    {
+        $user = auth()->user();
+        $user->coin = $user->coin - 1;
+        $user->save();
+
+        return response([
+            'status' => 'successful',
+            'result' => $user->coin
+        ]);
+    }
+
     //Create a new user
     public function store(Request $request)
     {

@@ -86,12 +86,6 @@ class GameController extends Controller
     {
         $input = $request->validated();
         try {
-            //Xóa ảnh cũ
-            // Nếu hình ảnh cũ tồn tại
-            if (Storage::disk('public')->exists('public/images/'.$game->image_url)) {
-                // Xóa hình ảnh cũ
-                Storage::disk('public')->delete('public/images/'.$game->image_url);
-            }
             // Kiểm tra xem request có chứa file ảnh không
             if ($request->hasFile('image_url')) {
                 // Lưu file ảnh vào thư mục public/images và lấy đường dẫn
@@ -99,6 +93,13 @@ class GameController extends Controller
                 $newFileName = time().'_'.$file->getClientOriginalName();
                 $imagePath = $file->move(public_path('/images'), $newFileName);
                 $input['image_url'] = $newFileName;
+
+                //Xóa ảnh cũ
+                // Nếu hình ảnh cũ tồn tại
+                if (Storage::disk('public')->exists('public/images/'.$game->image_url)) {
+                    // Xóa hình ảnh cũ
+                    Storage::disk('public')->delete('public/images/'.$game->image_url);
+                }
             }
             $game->update($input);
             return redirect()->to(route('games.index'))

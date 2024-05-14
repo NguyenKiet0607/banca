@@ -174,19 +174,14 @@
             <div class="header-col-R">
               <div class="header-group-btn">
                 <div class="heeader-btn_item btn-user notranslate">
-                  <p>vietduc2024</p>
                 </div>
                 <div class="heeader-btn_item btn-credit">
-                  <p>Xu 37</p>
                 </div>
                 <div class="heeader-btn_item btn-help">
-                  <p>Nạp xu</p>
                 </div>
                 <div class="heeader-btn_item btn-help">
-                  <p>Hỗ trợ</p>
                 </div>
                 <div class="heeader-btn_item btn-logout">
-                  <p>Đăng xuất</p>
                 </div>
               </div>
               <div class="hamburger">
@@ -204,7 +199,7 @@
               <div class="btn-back">
                 <p>Quay lại</p>
               </div>
-              <h1>PG2 Điện Tử</h1>
+              <h1>{{ $game->name }}</h1>
             </div>
             <div class="inner-room">
               <div class="inner-room_wrapper slot_wrapper">
@@ -224,7 +219,7 @@
       }
     </script>
     <script>
-      var GlobalGameSlug = 'pg2-dien-tu';
+      var GlobalGameSlug = '{{ $game->slug }}';
     </script>
     <script src="{{ asset('js/game.js') }}"></script>
     <div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;" data-id="">

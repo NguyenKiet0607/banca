@@ -18,7 +18,8 @@ class GameController extends Controller
 
     public function slot($slug)
     {
-        return view('client/slot');
+        $game = (new Game())->getGame(['slug' => $slug], true)->first();
+        return view('client/slot', compact('game'));
     }
     //List game
     public function games(Request $request)
@@ -42,8 +43,12 @@ class GameController extends Controller
      */
     public function detailGame($slug)
     {
-        $game = (new Game())->getGame(['slug'=>$slug], true)->first();
+        $game = (new Game())->where('slug', $slug)->orWhere('id', $slug)->first();
         if($game) {
+            if($game->parent_id > 0){
+                $gameParent = Game::find($game->parent_id);
+                $game->parent = $gameParent;
+            }
             return response([
                 'meta' => null,
                 'result' => $game,
@@ -59,13 +64,24 @@ class GameController extends Controller
     }
 
     /**
+     * Detail Slot
+     */
+
+    public function detailSlot($slug, $id)
+    {
+        $game = Game::find($id);
+        return view('client/detail-slot', compact('game'));
+    }
+
+    /**
      * Percentage
      */
     public function percentage(Request $request)
     {
+        $games = Game::select('id', 'percent')->whereIn('id', $request->get('ids'))->get();
         $data = [];
-        foreach($request->get('ids') as $id){
-            $data[$id] = rand(20, 100);
+        foreach($games as $game){
+            $data[$game->id] = $game->percent;
         }
 
         return response([
