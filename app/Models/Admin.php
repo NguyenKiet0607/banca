@@ -23,6 +23,7 @@ class Admin extends Authenticatable
         'password',
         'status',
         'coint',
+        'tenant_code'
     ];
 
     /**
@@ -45,6 +46,8 @@ class Admin extends Authenticatable
             $query->where('username', 'LIKE', "%" . $condition['name'] . "%")
                 ->orWhere('email', 'LIKE', "%" . $condition['name'] . "%");
         }
+
+        $query->whereIn('role', [1, 2]);
 
         if($returnQuery) {
             return $query;

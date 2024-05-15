@@ -20,6 +20,7 @@ return [
         'username' => 'Tên đăng nhập',
         'password' => 'Mật khẩu',
         'phone' => 'Số điện thoại',
+        'phone_zalo' => 'Số điện thoại zalo',
         'coin' => 'Xu',
         'status' => 'Trạng thái',
         'tenant_code' => 'Mã khách hàng',
@@ -28,7 +29,6 @@ return [
         'title' => 'Quản lý người dùng',
         'title_search' => 'Tìm kiếm người dùng',
         'placeholder_search' => 'Nhập tên, email, số điện thoại',
-        'country_code' => 'Mã quốc gia',
         'add_coin' => 'Nạp xu'
     ],
     'codes' => [

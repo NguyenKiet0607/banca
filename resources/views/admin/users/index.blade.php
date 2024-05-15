@@ -61,7 +61,6 @@
                                 <th>ID</th>
                                 <th>{{ __("layouts.users.username") }}</th>
                                 <th>{{ __("layouts.users.name") }}</th>
-                                <th>{{ __("layouts.users.email") }}</th>
                                 <th>{{ __("layouts.users.coin") }}</th>
                                 <th>{{ __("layouts.users.phone") }}</th>
                                 <th>{{ __("layouts.users.active") }}</th>

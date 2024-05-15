@@ -298,7 +298,7 @@ return [
             'role' => ['1'] //superadmin
         ],
         [
-            'text' => 'Khách hàng '.env('TENANT_CODE_DEFAULT', '001'),
+            'text' => 'Khách hàng Team C',
             'url'  => '/admin/users',
             'icon' => 'fas fa-fw fa-user',
             'active' => ['users', 'users*'],

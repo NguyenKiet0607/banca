@@ -26,13 +26,11 @@ class UserRequest extends FormRequest
         $id = $user ? $user->id : '';
         return [
             "name" => "required",
-            "email" => "nullable|email|unique:users,email,".$id,
             "username" => "required|unique:users,username,".$id,
             "password" => $requiredUpdate."|min:6",
-            "phone_number" => "nullable|numeric",
-            "phone_number_zalo" => "nullable|numeric",
+            "phone" => "nullable|numeric",
+            "phone_zalo" => "nullable|numeric",
             "status" => "required|in:0,1",
-            "country_code" => "nullable",
         ];
     }
 }

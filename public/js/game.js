@@ -11971,14 +11971,9 @@
                                 class: "img-resize",
                                 src: "/images/"+n.game.image_url,
                                 alt: ""
-                            }, null, 8, Lg)]), ds("div", {
-                                class: X("winRate ".concat(n.game.percentage > 70 ? "winRate-highlight-green" : n.game.percentage > 30 ? "winRate-highlight-red" : ""))
-                            }, [Mg, ds("h1", jg, fe(n.game.percentage ? n.game.percentage + "%" : "0%"), 1)], 2)]), ds("div", Ug, [ds("div", Dg, [ds("div", Bg, [ds("h1", null, fe(n.game.name), 1)]), ds("div", Fg, [ds("div", {
-                                class: X("progress-item ".concat(n.game.percentage < 35 ? "progressBar-banker" : n.game.percentage > 70 ? "progressBar-player" : "progressBar-draw")),
-                                style: Y({
-                                    width: n.game.percentage + "%"
-                                })
-                            }, $g, 6)])])])], 8, Rg)
+                            }, null, 8, Lg)])]), 
+                            ds("div", Ug, [ds("div", Dg, [ds("div", Bg, [ds("h1", null, fe(n.game.name), 1)]), 
+                            ds("div", Fg, [ds("div", {}, "Đang phân tích ...", 6)])])])], 8, Rg)
                         }]
                     ])
                 }

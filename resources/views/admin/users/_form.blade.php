@@ -34,29 +34,16 @@
     </div>
 
     <div class="form-group row col-md-10">
-        <label for="email" class="col-md-3 col-form-label text-md-right">{{ __('layouts.users.email') }}</label>
-        <div class="col-md-7">
-            <input id="email" type="text" class="form-control @error('email') is-invalid @enderror"
-                   name="email" value="{{ old('email', isset($user) && $user->email ? $user->email : '') }}">
-            @error('email')
-            <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-        </div>
-    </div>
-
-    <div class="form-group row col-md-10">
-        <label for="country_code" class="col-md-3 col-form-label text-md-right">
-            {{ __('layouts.users.country_code') }}
+        <label for="phone" class="col-md-3 col-form-label text-md-right">
+            {{ __('layouts.users.phone') }}
         </label>
 
         <div class="col-md-7">
-            <input id="country_code" type="text" class="form-control @error('country_code') is-invalid @enderror"
-                   name="country_code" value="{{ old('country_code', isset($user) && $user->country_code ? $user->country_code : '') }}"
+            <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror"
+                   name="phone" value="{{ old('phone', isset($user) && $user->phone ? $user->phone : '') }}"
                    autocomplete="nope">
 
-            @error('country_code')
+            @error('phone')
             <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -65,34 +52,16 @@
     </div>
 
     <div class="form-group row col-md-10">
-        <label for="phone_number" class="col-md-3 col-form-label text-md-right">
-            {{ __('layouts.users.phone_number') }}
+        <label for="phone_zalo" class="col-md-3 col-form-label text-md-right">
+            {{ __('layouts.users.phone_zalo') }}
         </label>
 
         <div class="col-md-7">
-            <input id="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror"
-                   name="phone_number" value="{{ old('phone_number', isset($user) && $user->phone_number ? $user->phone_number : '') }}"
+            <input id="phone_zalo" type="text" class="form-control @error('phone_zalo') is-invalid @enderror"
+                   name="phone_zalo" value="{{ old('phone_zalo', isset($user) && $user->phone_zalo ? $user->phone_zalo : '') }}"
                    autocomplete="nope">
 
-            @error('phone_number')
-            <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
-    </div>
-
-    <div class="form-group row col-md-10">
-        <label for="phone_number_zalo" class="col-md-3 col-form-label text-md-right">
-            {{ __('layouts.users.phone_number_zalo') }}
-        </label>
-
-        <div class="col-md-7">
-            <input id="phone_number_zalo" type="text" class="form-control @error('phone_number_zalo') is-invalid @enderror"
-                   name="phone_number_zalo" value="{{ old('phone_number_zalo', isset($user) && $user->phone_number_zalo ? $user->phone_number_zalo : '') }}"
-                   autocomplete="nope">
-
-            @error('phone_number_zalo')
+            @error('phone_zalo')
             <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
