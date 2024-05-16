@@ -63,7 +63,11 @@ return [
         "title_search" => "Tìm kiếm game",
         "placeholder_search" => "Nhập tên game",
         'priority' => 'Vị trí',
-        'percent' => 'Tỷ lệ'
+        'percent' => 'Tỷ lệ',
+        'workplace' => 'Nơi hiển thị',
+        'workplace_all' => 'Tất cả',
+        'workplace_web' => 'Web',
+        'workplace_app' => 'App',
     ],
 ];
 

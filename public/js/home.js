@@ -9055,7 +9055,7 @@
                         class: "heeader-btn_item btn-credit"
                     },
                     th = [gi("p", null, "Nạp xu", -1)],
-                    nh = [gi("p", null, "Hỗ trợ", -1)],
+                    nh = [],
                     rh = [gi("p", null, "Đăng xuất", -1)],
                     oh = [gi("div", {
                         class: "bar1"
@@ -10508,7 +10508,7 @@
                         getGames: function() {
                             var e = this,
                                 t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null;
-                            return Xm.get("/api/games?page_size=-1".concat(null !== t ? "&parent_id=".concat(t) : "")).then((function(t) {
+                            return Xm.get("/api/games?page_size=-1&workplace=1".concat(null !== t ? "&parent_id=".concat(t) : "")).then((function(t) {
                                 e.games = t.data.result
                             }))
                         },

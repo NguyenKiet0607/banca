@@ -41,10 +41,28 @@ class UserController extends Controller
     {
         //Validate data
         $input = $request->validate([
-            'username' => 'required|unique:users',
-            'phone' => 'required',
-            'password' => 'required|confirmed',
-            'code' => 'nullable'
+            'username' => 'required|min:6|max:20|unique:users',
+            'phone' => 'required|min:10|max:15|unique:users',
+            'phone_zalo' => 'required|min:10|max:15|unique:users',
+            'password' => 'required|min:6|max:20|confirmed',
+        ],[
+            'username.required' => 'Tên tài khoản là bắt buộc',
+            'phone.required' => 'Số điện thoại là bắt buộc',
+            'phone_zalo.required' => 'Số điện thoại zalo/tele là bắt buộc',
+            'password.required' => 'Mật khẩu là bắt buộc',
+            'username.min' => 'Tên tài khoản từ 6 đến 20 ký tự',
+            'username.max' => 'Tên tài khoản từ 6 đến 20 ký tự',
+            'phone.min' => 'Tên tài khoản từ 10 đến 15 ký tự',
+            'phone.max' => 'Tên tài khoản từ 6 đến 20 ký tự',
+            'phone_zalo.min' => 'Tên tài khoản từ 10 đến 15 ký tự',
+            'phone_zalo.max' => 'Tên tài khoản từ 6 đến 20 ký tự',
+            'password.min' => 'Tên tài khoản từ 6 đến 20 ký tự',
+            'password.max' => 'Tên tài khoản từ 6 đến 20 ký tự',
+            'password.confirmed' => 'Mật khẩu không khớp',
+            'username.unique' => 'Tên tài khoản đã tồn tại',
+            'phone.unique' => 'Số điện thoại đã tồn tại',
+            'phone_zalo.unique' => 'Số điện thoại zalo/tele đã tồn tại',
+
         ]);
 
         try{

@@ -29,6 +29,7 @@ class GameRequest extends FormRequest
             "slug" => "required",
             "image_url" => $image,
             "parent_id" => "required",
+            "workplace" => "required",
         ];
     }
 }

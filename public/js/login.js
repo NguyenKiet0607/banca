@@ -11874,6 +11874,7 @@
             Cg = hs("label", {
                 for: "input-Username"
             }, "SĐT", -1),
+            Cgz = hs("label", {}, "SĐT Zalo/Tele", -1),
             Tg = {
                 class: "form-group"
             },
@@ -11885,7 +11886,7 @@
             },
             Og = hs("label", {
                 for: "input-Username"
-            }, "Mã giới thiệu", -1),
+            }, "Xác nhận mật khẩu", -1),
             Rg = {
                 class: "form-group form-group_btn"
             };
@@ -12282,7 +12283,7 @@
                             username: "",
                             password: "",
                             phone: "",
-                            code: ""
+                            phone_zalo: "",
                         }
                     }
                 },
@@ -12294,7 +12295,8 @@
                             return Ig().wrap((function(e) {
                                 for (;;) switch (e.prev = e.next) {
                                     case 0:
-                                        if (t.data.username && t.data.password && t.data.phone) {
+                                        console.log(t.data);debugger;
+                                        if (t.data.username && t.data.password && t.data.phone && t.data.password_confirmation && t.data.phone_zalo) {
                                             e.next = 3;
                                             break
                                         }
@@ -12304,7 +12306,7 @@
                                         }), e.abrupt("return");
                                     case 3:
                                         return e.next = 5, t.gameStore.register(Lg(Lg({}, t.data), {}, {
-                                            password_confirmation: t.data.password
+                                            password_confirmation: t.data.password_confirmation
                                         })).catch((function(e) {
                                             return e.response
                                         }));
@@ -12351,7 +12353,7 @@
                     return ts(), as("div", yg, [vg, hs("div", bg, [_g, hs("div", Sg, [hs("div", wg, [Eg, Nr(hs("input", {
                         type: "text",
                         class: "form-control",
-                        placeholder: "Tài khoản",
+                        placeholder: "Tài khoản từ 6 đến 20 ký tự",
                         name: "regUser",
                         "onUpdate:modelValue": t[0] || (t[0] = function(e) {
                             return o.data.username = e
@@ -12363,50 +12365,62 @@
                     ])]), hs("div", xg, [Cg, Nr(hs("input", {
                         type: "text",
                         class: "form-control",
-                        placeholder: "SĐT",
+                        placeholder: "Nhập số điện thoại",
                         "onUpdate:modelValue": t[1] || (t[1] = function(e) {
                             return o.data.phone = e
                         }),
-                        name: "regUser",
+                        name: "regPhone",
                         autocomplete: "off",
                         required: ""
                     }, null, 512), [
                         [wc, o.data.phone]
+                    ])]), hs("div", xg, [Cgz, Nr(hs("input", {
+                        type: "text",
+                        class: "form-control",
+                        placeholder: "Nhập số điện thoại zalo/tele",
+                        "onUpdate:modelValue": t[2] || (t[2] = function(e) {
+                            return o.data.phone_zalo = e
+                        }),
+                        name: "regPhoneZalo",
+                        autocomplete: "off",
+                        required: ""
+                    }, null, 512), [
+                        [wc, o.data.phone_zalo]
                     ])]), hs("div", Tg, [Ag, Nr(hs("input", {
                         type: "password",
                         class: "form-control",
-                        "onUpdate:modelValue": t[2] || (t[2] = function(e) {
+                        "onUpdate:modelValue": t[3] || (t[3] = function(e) {
                             return o.data.password = e
                         }),
-                        placeholder: "mật khẩu ít nhất 8 ký tự",
+                        placeholder: "Mật khẩu từ 6 đến 20 ký tự",
                         autocomplete: "off",
                         required: ""
                     }, null, 512), [
                         [wc, o.data.password]
                     ])]), hs("div", kg, [Og, Nr(hs("input", {
-                        type: "text",
+                        type: "password",
                         class: "form-control",
-                        placeholder: "có thể để trống",
-                        "onUpdate:modelValue": t[3] || (t[3] = function(e) {
-                            return o.data.code = e
+                        placeholder: "Nhập lại mật khẩu",
+                        "onUpdate:modelValue": t[4] || (t[4] = function(e) {
+                            return o.data.password_confirmation = e
                         }),
-                        name: "code",
+                        name: "password_confirmation",
                         autocomplete: "off"
                     }, null, 512), [
-                        [wc, o.data.code]
+                        [wc, o.data.password_confirmation]
                     ])]), hs("div", Rg, [hs("div", {
                         class: "btn btn-model-cc",
-                        onClick: t[4] || (t[4] = function() {
+                        onClick: t[5] || (t[5] = function() {
                             return i.onClickCancel && i.onClickCancel.apply(i, arguments)
                         })
                     }, "Huỷ"), hs("button", {
                         class: "btn btn-model-cf",
-                        onClick: t[5] || (t[5] = function() {
+                        onClick: t[6] || (t[6] = function() {
                             return i.register && i.register.apply(i, arguments)
                         })
                     }, "Đăng ký")])]), hs("p", null, [bs(" Đã có tài khoản? "), hs("span", {
                         class: "link-login-model",
-                        onClick: t[6] || (t[6] = function() {
+                        onClick: t[7] || (t[7] = function() {
                             return i.onClickLogin && i.onClickLogin.apply(i, arguments)
                         })
                     }, "Đăng nhập")])])])

@@ -9861,7 +9861,7 @@
                 class: "heeader-btn_item btn-credit"
             },
             rd = [ds("p", null, "Nạp xu", -1)],
-            od = [ds("p", null, "Hỗ trợ", -1)],
+            od = [],
             id = [ds("p", null, "Đăng xuất", -1)],
             sd = [ds("div", {
                 class: "bar1"
@@ -11314,7 +11314,7 @@
                 getGames: function() {
                     var e = this,
                         t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null;
-                    return Zm.get("/api/games?page_size=-1".concat(null !== t ? "&parent_id=".concat(t) : "")).then((function(t) {
+                    return Zm.get("/api/games?page_size=-1&workplace=1".concat(null !== t ? "&parent_id=".concat(t) : "")).then((function(t) {
                         e.games = t.data.result
                     }))
                 },

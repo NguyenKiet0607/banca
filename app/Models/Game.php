@@ -20,7 +20,8 @@ class Game extends Model
         'parent_id',
         'priority',
         'slug',
-        'percent'
+        'percent',
+        'workplace'
     ];
 
     public function getGame($condition=[], $returnQuery = false)
@@ -41,6 +42,10 @@ class Game extends Model
 
         if (isset($condition['parent_id']) ) {
             $query->where('parent_id', $condition['parent_id']);
+        }
+
+        if (isset($condition['workplace']) ) {
+            $query->whereIn('workplace', [0, $condition['workplace']]);
         }
 
         if($returnQuery) {

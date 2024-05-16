@@ -39,19 +39,14 @@
                 <div class="header-col-R">
                     <div class="header-group-btn">
                         <div class="heeader-btn_item btn-user notranslate">
-                            <p></p>
                         </div>
                         <div class="heeader-btn_item btn-credit">
-                            <p>Xu </p>
                         </div>
                         <div class="heeader-btn_item btn-help">
-                            <p>Nạp xu</p>
                         </div>
                         <div class="heeader-btn_item btn-help">
-                            <p>Hỗ trợ</p>
                         </div>
                         <div class="heeader-btn_item btn-logout">
-                            <p>Đăng xuất</p>
                         </div>
                     </div>
                     <div class="hamburger">
