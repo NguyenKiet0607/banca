@@ -9841,8 +9841,8 @@
             Xd = [hs("p", null, "Đăng nhập", -1)],
             Qd = [hs("p", null, "Đăng ký", -1)],
             Zd = hs("div", {
-                id: "google_translate_element"
-            }, null, -1);
+                style: "display: flex;justify-content: center;margin-top: 20px;"
+            }, [_s('<div style="background: #000;color: #fff;text-align: center;padding: 10px 20px;"><div class="aa">Liên hệ</div><div><img width="20px" src="../images/telegram-logo.svg"/>Telegram: @nghichhai68668</div></div>')], -1);
         var eh = {
                 class: "model-login model-login_active"
             },

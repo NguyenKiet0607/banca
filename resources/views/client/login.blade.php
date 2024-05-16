@@ -48,13 +48,14 @@
                     <p>Đăng ký</p>
                 </div>
             </div>
+            <div>
+                <p>Liên hệ</p>
+                <div><span></span>Telegram: @nghichhai68668</div>
+            </div>
         </div>
         <!----><!---->
     </div>
 </div>
+</body>
 
 <script src="{{ asset('js/login.js') }}"></script>
-{{--            <iframe name="votingFrame" frameborder="0" src="./login_files/saved_resource.html"></iframe>--}}
-        </div>
-    </div>
-</div>
