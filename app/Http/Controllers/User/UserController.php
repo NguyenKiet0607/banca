@@ -27,7 +27,7 @@ class UserController extends Controller
     public function decreaseCoin()
     {
         $user = auth()->user();
-        $user->coin = $user->coin - 1;
+        $user->coin = $user->coin > 1 ? $user->coin - 1 : 0;
         $user->save();
 
         return response([
