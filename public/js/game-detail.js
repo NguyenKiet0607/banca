@@ -11357,7 +11357,8 @@
                     },
                     user: {},
                     games: [],
-                    game: {}
+                    game: {},
+                    coin: 0
                 }
             },
             actions: {
@@ -11367,7 +11368,8 @@
                 getUser: function() {
                     var e = this;
                     return yg.get("/api/user/current").then((function(t) {
-                        e.user = t.data.result
+                        e.user = t.data.result;
+                        e.coin = t.data.result.coin;
                     }))
                 },
                 getGames: function() {
@@ -12468,7 +12470,7 @@
                     },
                     decreaseCountDownTime: function() {
                         this.currentTime++;
-                        var e = 60 * this.resetMinutes - this.currentTime,
+                        var e = this.gameStore.coin*30 - this.currentTime,
                             t = Math.floor(e / 60),
                             n = e % 60;
                         this.timeStr = "".concat(t > 9 ? t : "0" + t, ":").concat(n > 9 ? n : "0" + n), e <= 0 && this.goBack()

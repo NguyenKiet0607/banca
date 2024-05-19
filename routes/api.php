@@ -41,4 +41,6 @@ Route::group([
     Route::post('/app/games/percentage', 'App\Http\Controllers\Api\ApiGameController@percentage');
     //Tru tien
     Route::post('/app/user/decrease-coin', 'App\Http\Controllers\Api\ApiUserController@decreaseCoin');
+    //Nap code
+    Route::post('/code', 'App\Http\Controllers\Api\ApiUserController@code')->name('api.code');
 });

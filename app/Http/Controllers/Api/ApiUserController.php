@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use App\Models\User;
+use App\Models\Code;
+use Illuminate\Support\Facades\DB;
 
 class ApiUserController extends Controller
 {
@@ -65,5 +67,46 @@ class ApiUserController extends Controller
             'status' => 'successful',
             'result' => $user->coin
         ]);
+    }
+
+    //Nạp coin
+    public function code(Request $request)
+    {
+        $code = Code::getAll(['buy' => true, 'code' => $request->code],
+            ['*'],
+            true)->first();
+        if ($code){
+            $message = $code->status ? 'success' : 'used';
+            $user = auth()->guard('api')->user();
+            if ($code->status){
+                DB::beginTransaction();
+                try {   
+                    //increase coin to user
+                    $user->coin += $code->credit;
+                    $user->save();
+                    //change status code
+                    $code->status = 0;
+                    $code->save();
+
+                    DB::commit();
+                }catch (\Exception $exception){
+                    DB::rollBack();
+                    Log::error('Increase credit error: '.$exception->getMessage());
+                    return response([
+                        'code' => 200,
+                        'message' => 'Error'
+                    ], 200);
+                }
+            }
+            return response([
+                'code' => 200,
+                'credit' => $user->coin,
+                'message' => $message
+            ], 200);
+        }
+        return response([
+            'code' => 404,
+            'message' => 'Invalid'
+        ], 200);
     }
 }
