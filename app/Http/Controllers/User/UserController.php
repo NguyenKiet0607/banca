@@ -105,8 +105,8 @@ class UserController extends Controller
             if ($code->status){
                 DB::beginTransaction();
                 try {
-                    //increase credit to user
-                    $user->credit += $code->credit;
+                    //increase coin to user
+                    $user->coin += $code->credit;
                     $user->save();
                     //change status code
                     $code->status = 0;
@@ -124,7 +124,7 @@ class UserController extends Controller
             }
             return response([
                 'code' => 200,
-                'credit' => $user->credit,
+                'credit' => $user->coin,
                 'message' => $message
             ], 200);
         }

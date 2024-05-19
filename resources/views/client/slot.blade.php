@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<!-- saved from url=(0037)https://hackslot.win/slot/pg2-dien-tu -->
-<html lang="en" style="height: 100%;">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ env('TITLE_SITE', 'HACK NOHU 2024') }}</title>
-    <meta name="api-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/game.css') }}">
-    
-  </head>
-  <body style="position: relative; min-height: 100%; top: 0px;">
-    <div id="app" data-v-app="">
-      <!---->
-      <!---->
+@extends('client.layout')
+
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/game.css') }}">
+@endsection
+
+@section('body')
       <div class="bacarat-1-page bg-type1">
         <div class="bg-main">
           <img src="{{ asset('images/bg1.jpg') }}" alt="" class="bg-main-1">
@@ -64,10 +55,11 @@
           </div>
         </section>
       </div>
-    </div>
+    @endsection
+
+    @section('js')
     <script>
       var GlobalGameSlug = '{{ $game->slug }}';
     </script>
     <script src="{{ asset('js/game.js') }}"></script>
-  </body>
-</html>
+    @endsection

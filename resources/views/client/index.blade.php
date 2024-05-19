@@ -1,28 +1,6 @@
-<!DOCTYPE html>
-<!-- saved from url=(0020)http://hackslot.win/ -->
-<html lang="en" style="height: 100%;">
+@extends('client.layout')
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ env('TITLE_SITE', 'HACK NOHU 2024') }}</title>
-    <meta name="api-token" content="{{ csrf_token() }}">
-
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" url="{{ asset('js/home.js') }}">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="api-token"]').attr('content')
-            }
-        });
-    </script>
-</head>
-
-<body style="position: relative; min-height: 100%; top: 0px;">
-<div id="app" data-v-app="">
+@section('body')
     <!----><!---->
     <div class="bacarat-1-page bg-type1">
         <div class="bg-main">
@@ -68,8 +46,8 @@
             </div>
         </section>
     </div>
-</div>
-<script src="{{ asset('js/home.js') }}"></script>
-</body>
+@endsection
 
-</html>
+@section('js')
+<script src="{{ asset('js/home.js') }}"></script>
+@endsection

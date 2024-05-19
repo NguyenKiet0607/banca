@@ -11345,10 +11345,7 @@
                     }))
                 },
                 decreaseCoin: function() {
-                    var e = this;
-                    return Zm.post("/api/user/decrease-coin").then((function(t) {
-                        e.user.coin = t.data.result
-                    }))
+                    
                 },
                 setAlert: function(e) {
                     this.alert = ng(ng({}, e), {}, {
@@ -11797,10 +11794,7 @@
                 return ts(), as("header", null, [ds("div", Qh, [Zh, ds("div", ed, [ds("div", {
                     class: X("header-group-btn ".concat(o.isActiveMobileMenu ? "header-group-btn_active" : ""))
                 }, [ds("div", td, [ds("p", null, fe(r.gameStore.user.username), 1)]), ds("div", nd, [ds("p", null, "Xu " + fe(r.gameStore.user.coin), 1)]), ds("div", {
-                    class: "heeader-btn_item btn-help",
-                    onClick: t[0] || (t[0] = function() {
-                        return i.showHelpAlert && i.showHelpAlert.apply(i, arguments)
-                    })
+                    class: "heeader-btn_item btn-coin"
                 }, rd), ds("div", {
                     class: "heeader-btn_item btn-help",
                     onClick: t[1] || (t[1] = function() {

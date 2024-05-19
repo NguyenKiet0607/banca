@@ -10991,10 +10991,7 @@
                         return ri(), li("header", null, [gi("div", Jd, [Xd, gi("div", Qd, [gi("div", {
                             class: Z("header-group-btn ".concat(o.isActiveMobileMenu ? "header-group-btn_active" : ""))
                         }, [gi("div", Zd, [gi("p", null, de(r.gameStore.user.username), 1)]), gi("div", eh, [gi("p", null, "Xu " + de(r.gameStore.user.coin), 1)]), gi("div", {
-                            class: "heeader-btn_item btn-help",
-                            onClick: t[0] || (t[0] = function() {
-                                return s.showHelpAlert && s.showHelpAlert.apply(s, arguments)
-                            })
+                            class: "heeader-btn_item btn-coin"
                         }, th), gi("div", {
                             class: "heeader-btn_item btn-help",
                             onClick: t[1] || (t[1] = function() {

@@ -22,6 +22,7 @@ Route::middleware('user.login')->group(function (){
     Route::get('/slot/{slug}', 'App\Http\Controllers\User\GameController@slot');
     Route::get('/game/{slug}/{id}', 'App\Http\Controllers\User\GameController@detailSlot');
     Route::post('/logout', 'App\Http\Controllers\User\AuthController@logout');
+    Route::post('/code', 'App\Http\Controllers\User\UserController@code')->name('code');
     Route::prefix('api')->group(function() {
         Route::get('/user/current', 'App\Http\Controllers\User\UserController@profile');
         Route::post('/user/decrease-coin', 'App\Http\Controllers\User\UserController@decreaseCoin');

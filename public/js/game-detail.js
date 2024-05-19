@@ -11856,10 +11856,7 @@
                 return ts(), as("header", null, [ds("div", gd, [yd, ds("div", vd, [ds("div", {
                     class: X("header-group-btn ".concat(o.isActiveMobileMenu ? "header-group-btn_active" : ""))
                 }, [ds("div", bd, [ds("p", null, fe(r.gameStore.user.username), 1)]), ds("div", _d, [ds("p", null, "Xu " + fe(r.gameStore.user.coin), 1)]), ds("div", {
-                    class: "heeader-btn_item btn-help",
-                    onClick: t[0] || (t[0] = function() {
-                        return i.showHelpAlert && i.showHelpAlert.apply(i, arguments)
-                    })
+                    class: "heeader-btn_item btn-coin"
                 }, Sd), ds("div", {
                     class: "heeader-btn_item btn-help",
                     onClick: t[1] || (t[1] = function() {
