@@ -9842,7 +9842,7 @@
             Qd = [hs("p", null, "Đăng ký", -1)],
             Zd = hs("div", {
                 style: "display: flex;justify-content: center;margin-top: 20px;"
-            }, [_s('<div style="background: #000;color: #fff;text-align: center;padding: 10px 20px;"><div class="aa">Liên hệ</div><div><img width="20px" src="../images/telegram-logo.svg"/>Telegram: @nghichhai68668</div></div>')], -1);
+            }, [_s('<div style="background: #000;color: #fff;text-align: center;padding: 10px 20px;"><div class="aa">Liên hệ</div><div><img width="20px" src="../images/telegram-logo.svg"/>Telegram: @TOOL555</div></div>')], -1);
         var eh = {
                 class: "model-login model-login_active"
             },
@@ -11886,7 +11886,7 @@
             },
             Og = hs("label", {
                 for: "input-Username"
-            }, "Xác nhận mật khẩu", -1),
+            }, "Xác nhận MK", -1),
             Rg = {
                 class: "form-group form-group_btn"
             };

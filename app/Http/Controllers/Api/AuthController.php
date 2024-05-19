@@ -68,7 +68,9 @@ class AuthController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function userProfile() {
-        return response()->json(auth('api')->user());
+        $user = auth('api')->user();
+        $user['main_web'] = env('MAIN_WEB', '');
+        return response()->json($user);
     }
 
     /**
