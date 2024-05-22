@@ -10,7 +10,7 @@
     <!---->
     <div class="index-page bg-type1">
         <div class="bg-main">
-            <img src="{{ asset('images/banner-desktop.jpeg') }}" alt="" class="bg-main-1">
+            <img src="{{ asset('images/banner-desktop.png') }}" alt="" class="bg-main-1">
             <img src="{{ asset('images/banner-mobile.png') }}" alt="" class="bg-main-1 mobile">
         </div>
         <div class="index-page_wrapper">
@@ -31,10 +31,6 @@
                 <div class="btn-item btn-register">
                     <p>Đăng ký</p>
                 </div>
-            </div>
-            <div>
-                <p>Liên hệ</p>
-                <div><span></span>Telegram: @TOOL555</div>
             </div>
         </div>
         <!----><!---->

@@ -9823,7 +9823,7 @@
             Wd = hs("div", {
                 class: "bg-main"
             }, [hs("img", {
-                src: "../images/banner-desktop.jpeg",
+                src: "../images/banner-desktop.png",
                 alt: "",
                 class: "bg-main-1"
             }), hs("img", {
