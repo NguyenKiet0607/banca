@@ -2724,15 +2724,34 @@ label {
     width: 200px;
 }
 .inner-room .winRate {
+    position: relative; /* Đặt vị trí cho phần tử cha */
+    display: grid;
+    height: 175px;
+    width: 175px;
+    place-content: center;
+    text-align: center;
+}
+
+.inner-room .winRate::before {
+    content: ""; /* Tạo một pseudo-element */
     background-image: url(../images/circleWinrate.png);
     background-position: 50%;
     background-size: 100% 100%;
-    display: grid;
-    filter: drop-shadow(0 0 10px #ffff);
-    height: 175px;
-    place-content: center;
-    text-align: center;
-    width: 175px;
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: rotate 4s linear infinite; /* Áp dụng hiệu ứng quay tròn */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 .inner-room .winRate p {
     color: #fff;
