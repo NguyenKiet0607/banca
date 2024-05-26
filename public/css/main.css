@@ -747,7 +747,7 @@ header .header-col-R .hamburger:hover .bar3 {
         margin-right: 35px;
     }
     header .header-col-R .header-group-btn {
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0);
         display: grid;
         grid-template-rows: auto auto auto auto 1fr;
         height: 100%;

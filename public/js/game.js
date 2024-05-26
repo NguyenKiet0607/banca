@@ -11345,7 +11345,10 @@
                     }))
                 },
                 decreaseCoin: function() {
-
+                    var e = this;
+                    return Xm.post("/api/user/decrease-coin").then((function(t) {
+                        e.user.coin = t.data.result
+                    }))
                 },
                 setAlert: function(e) {
                     this.alert = ng(ng({}, e), {}, {
@@ -12356,7 +12359,7 @@
                                     case 2:
                                         return e.next = 4, t.gameStore.getGames(t.gameStore.game.id);
                                     case 4:
-                                        t.intervalCoin = setInterval(t.decreaseCoin, 3e4), t.intervalPercentage = setInterval(t.getPercentage, 1e3);
+                                        t.intervalCoin = setInterval(t.decreaseCoin, 6e4), t.intervalPercentage = setInterval(t.getPercentage, 1e3);
                                     case 6:
                                     case "end":
                                         return e.stop()

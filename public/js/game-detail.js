@@ -12431,7 +12431,7 @@
                                     case 0:
                                         return e.next = 2, t.gameStore.getGame(GlobalGameId);
                                     case 2:
-                                        t.initResetMinutes(), t.intervalPercentage = setInterval(t.getPercentage, 1e3), t.intervalCoin = setInterval(t.decreaseCoin, 3e4), t.intervalTime = setInterval(t.decreaseCountDownTime, 1e3);
+                                        t.initResetMinutes(), t.intervalPercentage = setInterval(t.getPercentage, 1e3), t.intervalCoin = setInterval(t.decreaseCoin, 6e4), t.intervalTime = setInterval(t.decreaseCountDownTime, 1e3);
                                     case 6:
                                     case "end":
                                         return e.stop()
