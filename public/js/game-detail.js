@@ -11871,6 +11871,11 @@
                     })
                 }, Ed)], 2), ds("div", {
                     class: X("hamburger ".concat(o.isActiveMobileMenu ? "change" : "")),
+                    style: "margin-right: 10px; color: #fff"
+                }, [ds("img", {
+                    src: "/images/ic-coin.png"
+                }), ds('span',{},fe(r.gameStore.user.coin), 1)]), ds("div", {
+                    class: X("hamburger ".concat(o.isActiveMobileMenu ? "change" : "")),
                     onClick: t[3] || (t[3] = function() {
                         return i.toggleMobileMenu && i.toggleMobileMenu.apply(i, arguments)
                     })

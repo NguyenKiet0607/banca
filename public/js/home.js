@@ -11004,6 +11004,11 @@
                             })
                         }, rh)], 2), gi("div", {
                             class: Z("hamburger ".concat(o.isActiveMobileMenu ? "change" : "")),
+                            style: "margin-right: 10px; color: #fff"
+                        }, [gi("img", {
+                            src: "/images/ic-coin.png"
+                        }), gi('span',{},de(r.gameStore.user.coin), 1)]), gi("div", {
+                            class: Z("hamburger ".concat(o.isActiveMobileMenu ? "change" : "")),
                             onClick: t[3] || (t[3] = function() {
                                 return s.toggleMobileMenu && s.toggleMobileMenu.apply(s, arguments)
                             })
