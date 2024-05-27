@@ -91,7 +91,7 @@
 }
 
 header .header-col-R .header-group-btn .btn-coin:before {
-    background-image: url(../images/coin.jpg);
+    background-image: url(../images/coins.png);
     background-repeat: no-repeat;
     background-size: contain;
     content: "";
