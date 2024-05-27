@@ -11838,10 +11838,7 @@
                     })
                 },
                 alertCoinZero: function() {
-                    this.gameStore.setAlert({
-                        title: "Bạn đã hết xu",
-                        content: "Vui lòng liên hệ admin để nạp thêm xu"
-                    })
+                    window.location.href = "/"
                 },
                 toggleMobileMenu: function() {
                     this.isActiveMobileMenu = !this.isActiveMobileMenu
@@ -12464,10 +12461,7 @@
                         this.gameStore.decreaseCoin(this.gameStore.game.id)
                     },
                     alertCoinZero: function() {
-                        this.gameStore.setAlert({
-                            title: "Bạn đã hết xu",
-                            content: "Hãy liên hệ admin để nạp thêm xu"
-                        })
+                        window.location.href = "/"
                     },
                     decreaseCountDownTime: function() {
                         this.currentTime++;
