@@ -25,12 +25,8 @@ class ApiUserController extends Controller
             'password.required' => 'Mật khẩu là bắt buộc',
             'username.min' => 'Tên tài khoản từ 6 đến 20 ký tự',
             'username.max' => 'Tên tài khoản từ 6 đến 20 ký tự',
-            'phone.min' => 'Tên tài khoản từ 10 đến 15 ký tự',
-            'phone.max' => 'Tên tài khoản từ 6 đến 20 ký tự',
-            'phone_zalo.min' => 'Tên tài khoản từ 10 đến 15 ký tự',
-            'phone_zalo.max' => 'Tên tài khoản từ 6 đến 20 ký tự',
-            'password.min' => 'Tên tài khoản từ 6 đến 20 ký tự',
-            'password.max' => 'Tên tài khoản từ 6 đến 20 ký tự',
+            'password.min' => 'Mật khẩu từ 6 đến 20 ký tự',
+            'password.max' => 'Mật khẩu từ 6 đến 20 ký tự',
             'password.confirmed' => 'Mật khẩu không khớp',
             'username.unique' => 'Tên tài khoản đã tồn tại',
             'phone.unique' => 'Số điện thoại đã tồn tại',
@@ -80,7 +76,7 @@ class ApiUserController extends Controller
             $user = auth()->guard('api')->user();
             if ($code->status){
                 DB::beginTransaction();
-                try {   
+                try {
                     //increase coin to user
                     $user->coin += $code->credit;
                     $user->save();
