@@ -10971,10 +10971,10 @@
                             })
                         },
                         alertCoinZero: function() {
-                            this.gameStore.setAlert({
-                                title: "Bạn đã hết xu",
-                                content: "Vui lòng liên hệ admin để nạp thêm xu"
-                            })
+                            // this.gameStore.setAlert({
+                            //     title: "Bạn đã hết xu",
+                            //     content: "Vui lòng liên hệ admin để nạp thêm xu"
+                            // })
                         },
                         toggleMobileMenu: function() {
                             this.isActiveMobileMenu = !this.isActiveMobileMenu
@@ -11127,7 +11127,12 @@
                         class: "item-name"
                     };
                 const Lg = {
-                        props: ["game"]
+                        props: ["game"],
+                        setup: function() {
+                            return {
+                                gameStore: og()
+                            }
+                        }
                     },
                     Mg = {
                         props: ["title", "games"],
@@ -11136,7 +11141,20 @@
                                 ["render", function(e, t, n, r, o, s) {
                                     return ri(), li("a", {
                                         class: "item",
-                                        href: "/slot/".concat(n.game.slug)
+
+                                       // href: "/slot/".concat(n.game.slug)
+                                        onClick: () => {
+                                            console.log(r.gameStore.user.coin);
+                                            if(r.gameStore.user.coin > 1)
+                                                window.location.href = "/slot/".concat(n.game.slug);
+                                            else{
+                                                r.gameStore.setAlert({
+                                                    title: "Bạn đã hết xu",
+                                                    content: "Vui lòng liên hệ admin để nạp thêm xu"
+                                                })
+                                            }
+                                        }
+
                                     }, [gi("img", {
                                         class: "img-main",
                                         src: "/images/"+n.game.image_url,

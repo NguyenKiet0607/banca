@@ -52,6 +52,10 @@ class UserController extends Controller
             'password.required' => 'Mật khẩu là bắt buộc',
             'username.min' => 'Tên tài khoản từ 6 đến 20 ký tự',
             'username.max' => 'Tên tài khoản từ 6 đến 20 ký tự',
+            'phone.min' => 'Số điện thoại từ 10 đến 15 ký tự',
+            'phone.max' => 'Số điện thoại từ 10 đến 15 ký tự',
+            'phone_zalo.min' => 'Số điện thoại zalo/tele từ 10 đến 15 ký tự',
+            'phone_zalo.max' => 'Số điện thoại zalo/tele từ 10 đến 15 ký tự',
             'password.min' => 'Mật khẩu từ 6 đến 20 ký tự',
             'password.max' => 'Mật khẩu từ 6 đến 20 ký tự',
             'password.confirmed' => 'Mật khẩu không khớp',
@@ -75,7 +79,7 @@ class UserController extends Controller
             return response()->json([
                 'code' => 500,
                 'message' => $e->getMessage()
-            ]);
+            ], 500);
         }
 
     }

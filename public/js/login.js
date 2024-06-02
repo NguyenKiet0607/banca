@@ -12295,7 +12295,6 @@
                             return Ig().wrap((function(e) {
                                 for (;;) switch (e.prev = e.next) {
                                     case 0:
-                                        console.log(t.data);debugger;
                                         if (t.data.username && t.data.password && t.data.phone && t.data.password_confirmation && t.data.phone_zalo) {
                                             e.next = 3;
                                             break
@@ -12311,13 +12310,23 @@
                                             return e.response
                                         }));
                                     case 5:
-                                        (n = e.sent).status < 300 ? window.location.reload() : n.data.errors ? (r = n.data.errors[Object.keys(n.data.errors)[0]][0], t.gameStore.setAlert({
-                                            title: "Lỗi đăng ký",
-                                            content: r
-                                        })) : t.gameStore.setAlert({
-                                            title: "Lỗi đăng ký",
-                                            content: "Đã có lỗi xảy ra, vui lòng liên hệ admin để được hỗ trợ"
-                                        });
+                                        if ((n = e.sent).status == 200 && n.data.code == 200 ){
+                                            t.gameStore.setAlert({
+                                                title: "Đăng ký thành công",
+                                                content: ""
+                                            });
+                                            setTimeout(function(){
+                                                window.location.reload();
+                                             }, 3000);
+                                        }else{
+                                            (n = e.sent).status < 300 ? window.location.reload() : n.data.errors ? (r = n.data.errors[Object.keys(n.data.errors)[0]][0], t.gameStore.setAlert({
+                                                title: "Lỗi đăng ký",
+                                                content: r
+                                            })) : t.gameStore.setAlert({
+                                                title: "Lỗi đăng ký",
+                                                content: "Đã có lỗi xảy ra, vui lòng liên hệ admin để được hỗ trợ"
+                                            });
+                                        }
                                     case 7:
                                     case "end":
                                         return e.stop()
