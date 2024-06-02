@@ -9834,7 +9834,7 @@
             Gd = {
                 class: "index-page_wrapper"
             },
-            Kd = _s('<div class="group-img"><div class="welcome"><img src="../images/welcome-to.png" alt=""></div><div class="name-site"><img src="../images/logo-big.png" alt=""><img src="../images/logo-big.png" alt="" class="light-1"><img src="../images/logo-big.png" alt="" class="light-2"></div></div>', 1),
+            Kd = _s('<div class="group-img"><div class="welcome"><img src="../images/welcome-to.png" alt=""></div><div class="name-site"><img src="../images/logo-big.png" alt=""></div></div>', 1),
             Jd = {
                 class: "gruop-btn"
             },

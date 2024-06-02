@@ -2,15 +2,15 @@
 @php( $profile_url = View::getSection('profile_url') ?? config('adminlte.profile_url', 'logout') )
 
 @if (config('adminlte.usermenu_profile_url', false))
-    @php( $profile_url = \Illuminate\Support\Facades\Auth::guard('admin')->user()->adminlte_profile_url() )
+@php( $profile_url = \Illuminate\Support\Facades\Auth::guard('admin')->user()->adminlte_profile_url() )
 @endif
 
 @if (config('adminlte.use_route_url', false))
-    @php( $profile_url = $profile_url ? route($profile_url) : '' )
-    @php( $logout_url = $logout_url ? route($logout_url) : '' )
+@php( $profile_url = $profile_url ? route($profile_url) : '' )
+@php( $logout_url = $logout_url ? route($logout_url) : '' )
 @else
-    @php( $profile_url = $profile_url ? url($profile_url) : '' )
-    @php( $logout_url = $logout_url ? url($logout_url) : '' )
+@php( $profile_url = $profile_url ? url($profile_url) : '' )
+@php( $logout_url = $logout_url ? url($logout_url) : '' )
 @endif
 <li class="nav-item" style="padding: 0.5rem 0">
     <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,7 +25,7 @@
         <path d="M10.4239 8.05869C10.4715 8.39148 10.519 8.74807 10.519 9.08086C10.519 9.60384 10.4477 10.1268 10.3051 10.6023C10.0198 11.458 9.52059 12.2425 8.85501 12.8368C7.92793 13.6926 6.71557 14.168 5.45566 14.168C2.65055 14.3582 0.202072 12.2425 0.0118797 9.4137C-0.178313 6.60863 1.93737 4.16015 4.76624 3.96996C5.00393 3.94621 5.24167 3.94621 5.47937 3.96996C5.97855 3.96996 6.50154 4.04126 6.97697 4.18391C7.6426 4.39785 8.26063 4.75444 8.78362 5.20608C9.59189 5.9668 10.1862 6.96517 10.4239 8.05869Z" fill="#FEDB41"></path>
         <path d="M5.24279 11.6244C6.64757 11.6244 7.78637 10.4856 7.78637 9.08081C7.78637 7.67603 6.64757 6.53723 5.24279 6.53723C3.83802 6.53723 2.69922 7.67603 2.69922 9.08081C2.69922 10.4856 3.83802 11.6244 5.24279 11.6244Z" fill="#F4B844"></path>
     </svg>
-    {{ \Illuminate\Support\Facades\Auth::guard('admin')->user()->credit }}
+    {{ \Illuminate\Support\Facades\Auth::guard('admin')->user()->coin }}
 </li>
 <li class="nav-item dropdown user-menu">
 
