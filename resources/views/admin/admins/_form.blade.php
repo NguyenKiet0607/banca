@@ -100,3 +100,23 @@
         </div>
     </div>
 </div>
+@section('js')
+<script>
+    $(document).ready(function () {
+        $('.show-hide-password').on('click', function () {
+            var input = $(this).prev();
+            if (input.attr('type') === 'password') {
+                input.attr('type', 'text');
+                $(this).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+            } else {
+                input.attr('type', 'password');
+                $(this).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+            }
+        });
+
+        $('#btn-submit-delete').on('click', function() {
+            $('#form_delete').submit();
+        })
+    });
+</script>
+@endsection
