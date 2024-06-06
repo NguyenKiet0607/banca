@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="card-body">
-            <form class="form-horizontal" action="{{ route('users.store') }}" method="post" id="admin-form-create" enctype="multipart/form-data" autocomplete="off" data-env="{{ env('APP_URL') }}">
+            <form class="form-horizontal" action="{{ route('users.store') }}" method="post" id="admin-form-create" enctype="multipart/form-data" autocomplete="off" data-env="{{ env('APP_URL') }} "onsubmit="submitForm(event)">
                 {{ csrf_field() }}
 
                 @include('admin.users._form', [
@@ -48,5 +48,12 @@
                 </div>
             </form>
         </div>
+            <script>
+                function submitForm(event) {
+                        var button = document.querySelector('.btn-admin-create');
+                        button.disabled = true; // Disable the button on form submit
+                }
+            </script>
     </div>
+
 @endsection

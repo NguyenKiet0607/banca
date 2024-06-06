@@ -78,6 +78,7 @@ class UserController extends Controller
     public function update(UserRequest $request, User $user)
     {
         $input = $request->validated();
+        unset($input['username']);
         try {
             $user->fill($input);
             if (isset($input['password']) && $input['password'] != '') {

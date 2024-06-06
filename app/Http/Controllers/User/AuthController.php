@@ -39,12 +39,20 @@ class AuthController extends Controller
             return $this->sendLockoutResponse($request);
         }
         $input = $request->only(['username', 'password']);
+        $user = User::query()->where('username', $input['username'])->first();
         $input['status'] = 1;
         if ($this->guard()->attempt($input)) {
             if ($request->hasSession()) {
                 $request->session()->put('auth.password_confirmed_at', time());
             }
-
+            //reset creit = 0 if user not login in 3 days
+            if ($user->last_login < now()->subDays(3)) {
+                $user->credit = 0;
+            }
+            $user->last_login = now();
+            //save ip of user login
+            $user->ip = $request->ip();
+            $user->save();
             return $this->sendLoginResponse($request);
         }
 

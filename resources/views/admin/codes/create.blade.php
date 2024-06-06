@@ -27,6 +27,20 @@
             <form class="form-horizontal" action="{{ route('codes.store') }}" method="post" id="admin-form-create" enctype="multipart/form-data" autocomplete="off" data-env="{{ env('APP_URL') }}">
                 {{ csrf_field() }}
 
+                <div class="form-group row col-md-10">
+                    <label for="quantity" class="col-md-3 col-form-label text-md-right">{{ __('Số lượng') }}</label>
+
+                    <div class="col-md-7">
+                        <input id="quantity" type="number" class="form-control @error('quantity') is-invalid @enderror"
+                               name="quantity" value="1" autocomplete="off">
+
+                        @error('quantity')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
                 @include('admin.codes._form', [
 
                 ])

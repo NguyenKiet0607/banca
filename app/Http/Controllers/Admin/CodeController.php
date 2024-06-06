@@ -40,34 +40,38 @@ class CodeController extends Controller
     public function store(CodeRequest $request)
     {
         $userLogin = auth('admin')->user();
-        if ($userLogin->role === 2 && $userLogin->coin < $request->coin) { //Check if admin logged in has not enough credit
+        if ($userLogin->role === 2 && $userLogin->coin < $request->quantity * $request->credit) { //Check if admin logged in has not enough credit
             $errorMessage = __('messages.users.admin_not_enough_credit');
         }else{
             DB::beginTransaction();
-            try {
-                $code = $this->generateCode();
-                $codeModel = new Code();
-                $data = [
-                    'code' => $code,
-                    'credit' => $request->credit,
-                    'created_by' => Auth::guard('admin')->id()
-                ];
-                $codeModel->fill($data);
-                $codeModel->save();
+            for ($i = 0; $i < $request->quantity; $i++){
+                try {
+                    $code = $this->generateCode();
+                    $codeModel = new Code();
+                    $data = [
+                        'code' => $code,
+                        'credit' => $request->credit,
+                        'created_by' => Auth::guard('admin')->id()
+                    ];
+                    $codeModel->fill($data);
+                    $codeModel->save();
 
-                //Sub credit of admin logged in
-                if ($userLogin->role === 2){
-                    $userLogin->coin -= $request->credit;
+                    //Sub credit of admin logged in
+                    if ($userLogin->role === 2){
+                        $userLogin->coin -= $request->credit;
+                    }
+                    //add total_credit
+                    //$userLogin->total_credit += $request->credit;
                     $userLogin->save();
+                }catch (\Exception $exception){
+                    DB::rollBack();
+                    Log::error('Create code error: '.$exception->getMessage());
+                    $errorMessage = 'Create error';
                 }
-                DB::commit();
-                return redirect()->to(route('codes.index'))
-                    ->with('success', __('messages.codes.created_success'));
-            }catch (\Exception $exception){
-                DB::rollBack();
-                Log::error('Create code error: '.$exception->getMessage());
-                $errorMessage = 'Create error';
             }
+            DB::commit();
+            return redirect()->to(route('codes.index'))
+                                    ->with('success', __('messages.codes.created_success'));
         }
 
         return redirect()->back()
@@ -122,7 +126,9 @@ class CodeController extends Controller
                     : '<i class="text-danger fa fa-circle"></i>';
             })
             ->editColumn('created_by', function ($item) {
-                return $item->createdBy->username;
+                if($item->createdBy != null)
+                    return $item->createdBy->username;
+                return null;
             })
             ->rawColumns(['id', 'status'])
             ->make(true);

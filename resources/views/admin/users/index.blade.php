@@ -62,7 +62,10 @@
                                 <th>{{ __("layouts.users.username") }}</th>
                                 <th>{{ __("layouts.users.name") }}</th>
                                 <th>{{ __("layouts.users.coin") }}</th>
+                                <th>{{ __("layouts.users.total_credit") }}</th>
                                 <th>{{ __("layouts.users.phone") }}</th>
+                                <th>{{ __("layouts.users.last_login") }}</th>
+                                <th>{{ __("layouts.users.ip") }}</th>
                                 <th>{{ __("layouts.users.active") }}</th>
                                 <th></th>
                             </tr>

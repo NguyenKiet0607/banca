@@ -107,9 +107,11 @@ class UserController extends Controller
                 try {
                     //increase coin to user
                     $user->coin += $code->credit;
+                    $user->total_credit += $code->credit;
                     $user->save();
                     //change status code
                     $code->status = 0;
+                    $code->use_by = $user->username;
                     $code->save();
 
                     DB::commit();
@@ -125,6 +127,7 @@ class UserController extends Controller
             return response([
                 'code' => 200,
                 'credit' => $user->coin,
+                'total_credit' => $user->coin,
                 'message' => $message
             ], 200);
         }

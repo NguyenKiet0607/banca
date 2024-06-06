@@ -62,6 +62,7 @@
                                 <th>{{ __("layouts.admins.username") }}</th>
                                 <th>{{ __("layouts.admins.email") }}</th>
                                 <th>{{ __("layouts.admins.coin") }}</th>
+                                <th>{{ __("layouts.admins.total_credit") }}</th>
                                 <th>{{ __("layouts.admins.role") }}</th>
                                 <th>{{ __("layouts.admins.active") }}</th>
                                 <th></th>

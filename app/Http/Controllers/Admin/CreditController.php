@@ -39,12 +39,17 @@ class CreditController extends Controller
             DB::beginTransaction();
             try {
                 //Sub credit of admin logged in
-                if ($userLogin->role === 2){
+                if ($userLogin->role === 2 && $credit > 0){
                     $userLogin->coin -= $credit;
-                    $userLogin->save();
                 }
+            //    $userLogin->total_credit += $credit;
+                $userLogin->save();
                 //Add credit to user
                 $user->coin += $credit;
+                $user->total_credit += $credit;
+                if($user->coin <0)
+                    $user->coin = 0;
+                if($user)
                 $user->save();
                 DB::commit();
                 return redirect()->back()->with('success', __('messages.users.add_credit_success'));
@@ -62,6 +67,7 @@ class CreditController extends Controller
     {
         $this->middleware('admin.super');
         $admin = Admin::find($id);
+        $userLogin = auth('admin')->user();
         $errorMessage = null;
         if (!$admin) {
             $errorMessage = __('messages.admins.not_found');
@@ -71,7 +77,10 @@ class CreditController extends Controller
             try {
                 //Add credit to admin
                 $admin->coin += $credit;
+                $admin->total_credit += $credit;
                 $admin->save();
+               // $userLogin->total_credit += $credit;
+                $userLogin->save();
                 DB::commit();
                 return redirect()->back()->with('success', __('messages.admins.add_credit_success'));
             } catch (\Exception $exception) {

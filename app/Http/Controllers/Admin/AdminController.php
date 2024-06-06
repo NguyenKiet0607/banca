@@ -116,7 +116,7 @@ class AdminController extends Controller
     public function datatables($request)
     {
         $adminQuery = Admin::getAll($request,
-            ['id', 'username', 'email', 'role', 'status', 'coin'],
+            ['id', 'username', 'email', 'role', 'status', 'coin','total_credit'],
             true);
         return (new Datatables())->eloquent($adminQuery)
             ->editColumn('role', function ($item) {

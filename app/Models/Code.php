@@ -13,6 +13,8 @@ class Code extends Model
         "code",
         "credit",
         "created_by",
+        "use_by",
+        "updated_at",
         "status",
     ];
 

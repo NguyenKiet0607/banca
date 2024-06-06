@@ -23,7 +23,8 @@ class Admin extends Authenticatable
         'password',
         'status',
         'coint',
-        'tenant_code'
+        'tenant_code',
+        'total_credit'
     ];
 
     /**

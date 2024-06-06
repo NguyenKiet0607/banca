@@ -62,6 +62,8 @@
                                 <th>{{ __("layouts.codes.code") }}</th>
                                 <th>{{ __("layouts.codes.credit") }}</th>
                                 <th>{{ __("layouts.codes.createdBy") }}</th>
+                                <th>{{ __("layouts.codes.use_by") }}</th>
+                                <th>{{ __("layouts.codes.updated_at") }}</th>
                                 <th>{{ __("layouts.codes.status") }}</th>
                             </tr>
                             </thead>
@@ -78,5 +80,6 @@
 
 @section('js')
     <script src="{{ asset('js/codes.js').'?v='.env('VERSION', '1.0.0') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 @endsection
 
