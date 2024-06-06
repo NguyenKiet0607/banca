@@ -47,10 +47,11 @@ class AuthController extends Controller
             }
             //reset creit = 0 if user not login in 3 days
             if ($user->last_login < now()->subDays(3)) {
-                $user->credit = 0;
+                $user->coin = 0;
             }
+
             $user->last_login = now();
-            //save ip of user login
+//            //save ip of user login
             $user->ip = $request->ip();
             $user->save();
             return $this->sendLoginResponse($request);

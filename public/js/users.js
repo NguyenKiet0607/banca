@@ -20,7 +20,10 @@ window.addEventListener('load', function () {
             {data: 'username', name: 'username'},
             {data: 'name', name: 'name'},
             {data: 'coin', name: 'coin'},
+            {data: 'total_credit', name: 'total_credit'},
             {data: 'phone', name: 'phone'},
+            {data: 'last_login', name: 'last_login'},
+            {data: 'ip', name: 'ip'},
             {data: 'status', name: 'status'},
             {
                 data: 'action', name: 'action', orderable: false, searchable: false,
@@ -36,6 +39,9 @@ window.addEventListener('load', function () {
             { "width": "10%", "targets": 3 },
             { "width": "15%", "targets": 4 },
             { "width": "10%", "targets": 5 },
+            { "width": "10%", "targets": 6 },
+            { "width": "10%", "targets": 7 },
+            { "width": "10%", "targets": 8 },
         ],
         "lengthMenu": [[10, 20, 50, 100], [10, 20, 50, 100]],
         "pageLength":len

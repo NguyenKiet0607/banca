@@ -39,9 +39,9 @@
         </label>
 
         <div class="col-md-7">
-            <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror"
-                   name="phone" value="{{ old('phone', isset($user) && $user->phone ? $user->phone : '') }}"
-                   autocomplete="nope">
+            <input id="phone" type= @if(Auth::guard('admin')->user()->role == 2) "password" @else "text" @endif class="form-control @error('phone') is-invalid @enderror"
+                   name="phone_number" value="{{ old('phone', isset($user) && $user->phone ? $user->phone : '') }}"
+                   autocomplete="nope"  @if(Auth::guard('admin')->user()->role == 2) disabled @endif>
 
             @error('phone')
             <span class="invalid-feedback" role="alert">
@@ -57,9 +57,9 @@
         </label>
 
         <div class="col-md-7">
-            <input id="phone_zalo" type="text" class="form-control @error('phone_zalo') is-invalid @enderror"
-                   name="phone_zalo" value="{{ old('phone_zalo', isset($user) && $user->phone_zalo ? $user->phone_zalo : '') }}"
-                   autocomplete="nope">
+            <input id="phone_zalo" type= @if(Auth::guard('admin')->user()->role == 2) "password" @else "text" @endif class="form-control @error('phone_zalo') is-invalid @enderror"
+                   name="phone_number_zalo" value="{{ old('phone_zalo', isset($user) && $user->phone_zalo ? $user->phone_zalo : '') }}"
+                   autocomplete="nope"  @if(Auth::guard('admin')->user()->role == 2) disabled @endif>
 
             @error('phone_zalo')
             <span class="invalid-feedback" role="alert">

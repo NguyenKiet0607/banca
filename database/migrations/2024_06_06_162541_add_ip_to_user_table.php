@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //Add credit column
-            $table->integer('ip')->default(0)->after('last_login');
+            $table->string('ip')->default(0)->after('last_login');
         });
     }
 

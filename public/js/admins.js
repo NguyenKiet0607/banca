@@ -20,6 +20,7 @@ window.addEventListener('load', function () {
             {data: 'username', name: 'username'},
             {data: 'email', name: 'email'},
             {data: 'coin', name: 'coin'},
+            {data: 'total_credit', name: 'total_credit'},
             {data: 'role', name: 'role'},
             {data: 'status', name: 'status'},
             {

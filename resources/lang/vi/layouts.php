@@ -13,6 +13,7 @@ return [
         "title_search" => "Tìm kiếm admin",
         "placeholder_search" => "Nhập tên đăng nhập hoặc email",
         'coin' => 'Xu',
+        'total_credit'=>'Tổng nạp'
     ],
     'users' => [
         'name' => 'Tên',
@@ -29,7 +30,10 @@ return [
         'title' => 'Quản lý người dùng',
         'title_search' => 'Tìm kiếm người dùng',
         'placeholder_search' => 'Nhập tên, email, số điện thoại',
-        'add_coin' => 'Nạp xu'
+        'add_coin' => 'Nạp xu',
+        'total_credit'=>'Tổng nạp',
+        'last_login'=>'Lần đăng nhập cuối',
+        'ip'=>'IP',
     ],
     'codes' => [
         'title' => 'Quản lý code',
@@ -39,6 +43,8 @@ return [
         'code' => 'Code',
         'createdBy' => 'Người tạo',
         'status' => 'Trạng thái',
+        'use_by' => 'Người sử dụng',
+        'updated_at' => 'Ngày cập nhật',
     ],
     'role' => [
         '1' => 'Super Admin',
