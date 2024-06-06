@@ -40,7 +40,7 @@ class CodeController extends Controller
     public function store(CodeRequest $request)
     {
         $userLogin = auth('admin')->user();
-        if ($userLogin->role === 2 && $userLogin->credit < $request->credit) { //Check if admin logged in has not enough credit
+        if ($userLogin->role === 2 && $userLogin->coin < $request->coin) { //Check if admin logged in has not enough credit
             $errorMessage = __('messages.users.admin_not_enough_credit');
         }else{
             DB::beginTransaction();
@@ -57,7 +57,7 @@ class CodeController extends Controller
 
                 //Sub credit of admin logged in
                 if ($userLogin->role === 2){
-                    $userLogin->credit -= $request->credit;
+                    $userLogin->coin -= $request->credit;
                     $userLogin->save();
                 }
                 DB::commit();
