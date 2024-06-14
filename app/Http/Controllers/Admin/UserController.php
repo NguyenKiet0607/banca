@@ -130,7 +130,7 @@ class UserController extends Controller
                     : '<i class="text-danger fa fa-circle"></i>';
             })
             ->editColumn('phone', function ($item) {
-                return (auth('admin')->user()->role == 2 ) ? null: $item->phone_number;
+                return (auth('admin')->user()->role == 2 ) ? null: $item->phone;
             })
             ->addColumn('action', function ($item) {
                 return '<div class="btn btn-primary btn-xs credit" data-toggle="modal" data-id="'.$item->id.'" data-model="user"><i class="fa fa-credit-card">'.__('layouts.users.add_coin').'</i></div>'.
