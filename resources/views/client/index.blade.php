@@ -4,7 +4,7 @@
     <!----><!---->
     <div class="bacarat-1-page bg-type1">
         <div class="bg-main">
-            <img src="{{ asset('images/bg1.jpg') }}" alt="" class="bg-main-1">
+            <img src="{{ asset('images/bg1.png') }}" alt="" class="bg-main-1">
         </div>
         <header>
             <div class="header_wrapper">
@@ -12,7 +12,7 @@
                     <a href="#" class="header-logo">
                         <img src="{{ asset('images/logo.png') }}" alt="">
                     </a>
-                
+
                 </div>
                 <div class="header-col-R">
                     <div class="header-group-btn">

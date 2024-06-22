@@ -9027,7 +9027,7 @@
                     Kd = gi("div", {
                         class: "bg-main"
                     }, [gi("img", {
-                        src: "../images/bg1.jpg",
+                        src: "../images/bg1.png",
                         alt: "",
                         class: "bg-main-1"
                     })], -1);

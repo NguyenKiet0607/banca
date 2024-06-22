@@ -9823,7 +9823,7 @@
             Wd = hs("div", {
                 class: "bg-main"
             }, [hs("img", {
-                src: "../images/banner-desktop.png",
+                src: "../images/banner-desktop-logo.png",
                 alt: "",
                 class: "bg-main-1"
             }), hs("img", {
@@ -9834,7 +9834,7 @@
             Gd = {
                 class: "index-page_wrapper"
             },
-            Kd = _s('<div class="group-img"><div class="welcome"><img src="../images/welcome-to.png" alt=""></div><div class="name-site"><img src="../images/logo-big.png" alt=""><img src="../images/light-1.png" alt="" class="light-1"><img src="../images/light-2.png" alt="" class="light-2"></div></div>', 1),
+            Kd = _s('<div class="group-img"><div class="welcome"><img src="../images/welcome-to.png" alt=""></div><div class="name-site"><img src="../images/logo-big.png" alt=""></div></div>', 1),
             Jd = {
                 class: "gruop-btn"
             },
