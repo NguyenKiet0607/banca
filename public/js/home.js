@@ -11152,7 +11152,7 @@
                                        // href: "/slot/".concat(n.game.slug)
                                         onClick: () => {
                                             console.log(r.gameStore.user.coin);
-                                            if(r.gameStore.user.coin > 1)
+                                            if(r.gameStore.user.coin > 0)
                                                 window.location.href = "/slot/".concat(n.game.slug);
                                             else{
                                                 r.gameStore.setAlert({
