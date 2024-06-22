@@ -98,6 +98,14 @@ header .header-col-R .header-group-btn .btn-coin:before {
     height: 45px;
     width: 50px;
 }
+header .header-col-R .header-group-btn .btn-tele:before {
+    background-image: url(../images/telegram-logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: 45px;
+    width: 50px;
+}
 
 .inner-room .winRate p, .inner-room .winRate h1{
     z-index: 10;

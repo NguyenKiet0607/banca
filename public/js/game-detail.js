@@ -9922,7 +9922,9 @@
             Sd = {
                 class: "heeader-btn_item btn-coin"
             },
-            wd = [],
+            wd = {
+                class: "heeader-btn_item btn-tele"
+            },
             Ed = [ds("p", null, "Đăng xuất", -1)],
             xd = [ds("div", {
                 class: "bar1"
@@ -11856,7 +11858,11 @@
             ["render", function(e, t, n, r, o, i) {
                 return ts(), as("header", null, [ds("div", gd, [yd, ds("div", vd, [ds("div", {
                     class: X("header-group-btn ".concat(o.isActiveMobileMenu ? "header-group-btn_active" : ""))
-                }, [ds("div", bd, [ds("p", null, fe(r.gameStore.user.username), 1)]), ds("div", Sd, [ds("p", null, "Nạp Xu", 1)]),ds("div", _d, [ds("p", null, "Xu " + fe(r.gameStore.user.coin), 1)])
+                }, [ds("div", bd, [
+                    ds("p", null, fe(r.gameStore.user.username), 1)]),
+                    ds("div", Sd, [ds("p", null, "Nạp Xu", 1)]),
+                    ds("div", wd, [ds("p", null, "Cộng Đồng Nổ Hũ", 1)]),
+                    ds("div", _d, [ds("p", null, "Xu " + fe(r.gameStore.user.coin), 1)])
                     , ds("div", {
                     class: "heeader-btn_item btn-logout",
                     onClick: t[2] || (t[2] = function() {

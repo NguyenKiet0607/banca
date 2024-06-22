@@ -4,6 +4,11 @@ $(document).ready(function() {
         $('#coin-model').show();
     });
 
+    $(document).on('click', '.btn-tele', function() {
+        var telegramLink = 'https://t.me/hackslotokvip';
+        window.open(telegramLink, '_blank');
+    });
+
     $('#coinform .btn-model-cf').click(function(e) {
         e.preventDefault();
         let code = $('input[name="code"]').val();

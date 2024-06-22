@@ -9057,7 +9057,9 @@
                     th = {
                         class: "heeader-btn_item btn-coin"
                     },
-                    nh = [],
+                    nh = {
+                        class: "heeader-btn_item btn-tele"
+                    },
                     rh = [gi("p", null, "Đăng xuất", -1)],
                     oh = [gi("div", {
                         class: "bar1"
@@ -10992,13 +10994,18 @@
                     ["render", function(e, t, n, r, o, s) {
                         return ri(), li("header", null, [gi("div", Jd, [Xd, gi("div", Qd, [gi("div", {
                             class: Z("header-group-btn ".concat(o.isActiveMobileMenu ? "header-group-btn_active" : ""))
-                        }, [gi("div", Zd, [gi("p", null, de(r.gameStore.user.username), 1)]), gi("div", th, [gi("p", null, "Nạp  Xu", 1)]), gi("div", eh, [gi("p", null, "Xu " + de(r.gameStore.user.coin), 1)])
-                            , gi("div", {
-                            class: "heeader-btn_item btn-logout",
-                            onClick: t[2] || (t[2] = function() {
-                                return s.onLogout && s.onLogout.apply(s, arguments)
-                            })
-                        }, rh)], 2), gi("div", {
+                        }, [gi("div", Zd, [
+                                gi("p", null, de(r.gameStore.user.username), 1)]),
+                                gi("div", th, [gi("p", null, "Nạp Xu", 1)]),
+                            gi("div", nh, [gi("p", null, "Cộng Đồng Nổ Hũ", 1)]),
+                                gi("div", eh, [gi("p", null, "Xu " + de(r.gameStore.user.coin), 1)]),
+                            gi("div", {
+                                class: "heeader-btn_item btn-logout",
+                                onClick: t[2] || (t[2] = function() {
+                                    return s.onLogout && s.onLogout.apply(s, arguments)
+                                })
+                                }, rh)
+                        ], 2), gi("div", {
                             class: Z("hamburger ".concat(o.isActiveMobileMenu ? "change" : "")),
                             style: "margin-right: 10px; color: #fff"
                         }, [gi("img", {
