@@ -81,7 +81,10 @@ class GameController extends Controller
         $games = Game::select('id', 'percent')->whereIn('id', $request->get('ids'))->get();
         $data = [];
         foreach($games as $game){
-            $data[$game->id] = $game->percent;
+            if($game->percent >=100)
+                $data[$game->id] = 100;
+            else
+                $data[$game->id] = $game->percent;
         }
 
         return response([

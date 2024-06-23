@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\Game;
-
+use Carbon\Carbon;
 class UpdatePercent extends Command
 {
     /**
@@ -26,18 +26,32 @@ class UpdatePercent extends Command
      */
     public function handle()
     {
-        //Lấy ra các game đã update được 30 giây
+        //Lấy ra các game đã update được 60 giây
         $games = Game::where('parent_id', '>', 0)
-                    ->whereRaw('TIMESTAMPDIFF(SECOND, updated_at, NOW()) > 15')->get();
+            ->where(function($query) {
+                $query->where('updated_at', '<=', Carbon::now()->subSeconds(60))
+                    ->orWhere('percent', 0)
+                    ->orWhereNull('percent');
+            })
+            ->get();
 
         //Update tỉ lệ thắng
         foreach($games as $game){
-            $game->percent = $this->generatePercent($game->percent);
+            $game->percent = $this->generatePercent2($game->percent);
             $game->save();
         }
 
-        echo $game->percent;
+      //  echo $game->percent;
     }
+
+    public function generatePercent2($rate){
+        if ($rate === null || $rate >= 105 ||$rate === 0) {
+            $rate = mt_rand(30, 100);
+        }
+        return $rate +1;
+    }
+
+
 
 
     public function generatePercent($rate) {
