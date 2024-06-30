@@ -1,47 +1,24 @@
 @extends('client.layout')
 
+@section('css')
+@endsection
+
 @section('body')
     <!----><!---->
     <div class="bacarat-1-page bg-type1">
-        <div class="bg-main">
-            <img src="{{ asset('images/bg1.png') }}" alt="" class="bg-main-1">
-        </div>
-        <header>
-            <div class="header_wrapper">
-                <div class="header-col-L">
-                    <a href="#" class="header-logo">
-                        <img src="{{ asset('images/logo.png') }}" alt="">
-                    </a>
-
-                </div>
-                <div class="header-col-R">
-                    <div class="header-group-btn">
-                        <div class="heeader-btn_item btn-user notranslate">
-                        </div>
-                        <div class="heeader-btn_item btn-credit">
-                        </div>
-                        <div class="heeader-btn_item btn-help">
-                        </div>
-                        <div class="heeader-btn_item btn-help">
-                        </div>
-                        <div class="heeader-btn_item btn-logout">
-                        </div>
-                    </div>
-                    <div class="hamburger">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
-                        <div class="bar4"></div>
-                    </div>
-                </div>
-            </div>
-        </header>
+        @include('client.header')
         <section class="slectgame-slide">
-            <div class="slectgame_inner">
-                <div class="title-Page">
-                    <h1>SLOT</h1>
+            <div class="slectgame_inner col-8">
+                <div class="text-center mt-3">
+                    <img src="{{ asset('images/slot.png') }}" alt="slot">
                 </div>
                 <div class="slot_wrapper">
+                    @foreach($games as $game)
+                        <div data-id="{{ $game->id }}" class="detail-game">
+                            <img src="{{ asset('images/'.$game->image_url) }}" alt="jili">
+                        </div>
+                    @endforeach
+                
                 </div>
             </div>
         </section>
@@ -49,5 +26,5 @@
 @endsection
 
 @section('js')
-<script src="{{ asset('js/home.js') }}"></script>
+<!-- <script src="{{ asset('js/home.js') }}"></script> -->
 @endsection

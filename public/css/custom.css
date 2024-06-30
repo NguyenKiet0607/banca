@@ -1,9 +1,9 @@
-#coinform{
+#coinform, #loginform, #registerform{
     max-width: 400px;
     margin: 0 auto;
 }
 
-#coinform .form-group_btn{
+#coinform .form-group_btn, #loginform .form-group_btn, #registerform .form-group_btn{
     grid-column-gap: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -11,7 +11,7 @@
     margin-top: 20px;
 }
 
-#coinform .btn-model-cc{
+#coinform .btn-model-cc, #loginform .btn-model-cc, #registerform .btn-model-cc{
     animation: btn-item 2s ease-in-out infinite alternate;
     background-image: -webkit-linear-gradient(-90deg, #b8e6fe, #38b3f9 25%, #0470d3 85%, #b8e6fe 115%);
     border: 1px solid #fff;
@@ -24,7 +24,7 @@
     cursor: pointer;
 }
 
-#coinform .btn-model-cf{
+#coinform .btn-model-cf, #loginform .btn-model-cf, #registerform .btn-model-cf{
     animation: btn-item 2s ease-in-out infinite alternate;
     background-image: -webkit-linear-gradient(-90deg, #f3a2ff, #e324ff 25%, #8c20e5 85%, #ffb4f9 115%);
     border: 1px solid #fff;
@@ -90,14 +90,6 @@
     flex-wrap: wrap;
 }
 
-header .header-col-R .header-group-btn .btn-coin:before {
-    background-image: url(../images/coins.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    content: "";
-    height: 45px;
-    width: 50px;
-}
 header .header-col-R .header-group-btn .btn-tele:before {
     background-image: url(../images/telegram-logo.svg);
     background-repeat: no-repeat;
@@ -115,4 +107,93 @@ header .header-col-R .header-group-btn .btn-tele:before {
     .game-item-top {
       display: block !important;
     }
+}
+
+.bg-login{
+    background-image: url(../images/bg-login-model.png) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: unset !important;
+    border: unset !important;
+    border-radius: unset !important;
+    box-shadow: unset !important;
+    min-height: 430px;
+    max-width: 730px !important;
+}
+
+.form-check{
+    padding-left: unset !important;
+    color: #fff;
+}
+
+.form-check-input {
+    margin-top: .4rem !important;
+    margin-left: .25rem !important;
+}
+
+body{
+    background-image: url(../images/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slectslot_inner{
+    background-image: url(../images/111.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 490px;
+    border-radius: unset !important;
+    border: 1px solid #00FF84 !important;
+}
+
+.slot_item{
+    background-image: url(../images/Layer_14_1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 230px;
+    height: 120px;
+    position: relative;
+    cursor: pointer;
+}
+.slot_image{
+    width: 60px;
+}
+.slot_title{
+    width: 125px;
+    overflow:hidden; 
+    white-space:nowrap; 
+    text-overflow: ellipsis;
+    color: #fff;
+    position: absolute;
+    bottom: 30px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.slot_percent_1{
+    color: #fff;
+    font-weight: 700;
+    position: absolute;
+    right: 31px;
+    top: 36px;
+    font-size: 14px;
+}
+.slot_percent_2{
+    background: linear-gradient(#BDE94B, #2DDA4F);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 12px;
+    font-weight: 400;
+    position: absolute;
+    right: 25px;
+    bottom: 4px;
+}
+.slot_detail_wrapper{
+    max-height: 300px !important;
+}
+.detail-game{
+    cursor: pointer;
+}
+.btn-help{
+    cursor: pointer;
 }

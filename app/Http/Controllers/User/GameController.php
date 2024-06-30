@@ -13,13 +13,16 @@ class GameController extends Controller
 {
     public function index()
     {
-        return view('client/index');
+        $games = (new Game())->getGame();
+        return view('client/index', compact('games'));
     }
 
     public function slot($slug)
     {
         $game = (new Game())->getGame(['slug' => $slug], true)->first();
-        return view('client/slot', compact('game'));
+        $slots = (new Game())->getGame(['parent_id' => $game->id]);
+        
+        return view('client/slot', compact('game', 'slots'));
     }
     //List game
     public function games(Request $request)

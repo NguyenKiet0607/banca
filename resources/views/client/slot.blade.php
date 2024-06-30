@@ -6,51 +6,26 @@
 
 @section('body')
       <div class="bacarat-1-page bg-type1">
-        <div class="bg-main">
-          <img src="{{ asset('images/bg1.png') }}" alt="" class="bg-main-1">
-        </div>
-        <header>
-          <div class="header_wrapper">
-            <div class="header-col-L">
-              <a href="/" class="header-logo">
-<!--                <img src="{{ asset('images/logo.png') }}" alt="">-->
-              </a>
-
-            </div>
-            <div class="header-col-R">
-              <div class="header-group-btn">
-                <div class="heeader-btn_item btn-user notranslate">
-                </div>
-                <div class="heeader-btn_item btn-credit">
-                </div>
-                <div class="heeader-btn_item btn-help">
-                </div>
-                <div class="heeader-btn_item btn-help">
-                </div>
-                <div class="heeader-btn_item btn-logout">
-                </div>
-              </div>
-              <div class="hamburger">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-                <div class="bar4"></div>
-              </div>
-            </div>
-          </div>
-        </header>
+        @include('client.header')
         <section class="slectgame-slide">
-          <div class="slectgame_inner">
+          <div class="slectgame_inner col-8 slectslot_inner">
             <div class="title-Page">
               <div class="btn-back">
-                <p>Quay lại</p>
+              <img src="{{ asset('images/333.png') }}" alt="back">
               </div>
               <h1>{{ $game->name }}</h1>
             </div>
-            <div class="inner-room">
-              <div class="inner-room_wrapper slot_wrapper">
-
+            <div class="slot_wrapper slot_detail_wrapper">
+              @foreach($slots as $slot)
+              <div class="slot_item">
+                <div class="slot_image">
+                  <img alt="slot image" src="{{ asset('images/'.$slot->image_url) }}">
+                </div>
+                <div class="slot_title">{{ $slot->name }}</div>
+                <div class="slot_percent_1">{{ $slot->percent }}%</div>
+                <div class="slot_percent_2">50%</div>
               </div>
+              @endforeach
             </div>
           </div>
         </section>
@@ -58,8 +33,8 @@
     @endsection
 
     @section('js')
-    <script>
+    <!-- <script>
       var GlobalGameSlug = '{{ $game->slug }}';
-    </script>
-    <script src="{{ asset('js/game.js') }}"></script>
+    </script> -->
+    <!-- <script src="{{ asset('js/game.js') }}"></script> -->
     @endsection

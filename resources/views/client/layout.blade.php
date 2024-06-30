@@ -9,8 +9,9 @@
     <title>{{ env('TITLE_SITE', 'HACK NOHU 2024') }}</title>
     <meta name="api-token" content="{{ csrf_token() }}">
 
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">.
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">.
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
     @yield('css')
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -45,6 +46,17 @@
         </form>
     </div>
 </div>
+@include('client.alert', [
+    'title' => '',
+    'content' => 'Vui lòng liên hệ admin để được hỗ trợ',
+    'id' => 'help-model'
+])
+
+@include('client.alert', [
+    'title' => 'Bạn đã hết xu',
+    'content' => 'Vui lòng liên hệ admin để nạp thêm',
+    'id' => 'coin-alert-model'
+])
 @yield('js')
 </body>
 

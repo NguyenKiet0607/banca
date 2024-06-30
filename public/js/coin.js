@@ -34,5 +34,18 @@ $(document).ready(function() {
 
     $('#coinform .btn-model-cc').click(function(e) {
         $('#coin-model').hide();
+    });
+
+    $('.detail-game').click(function() {
+        let id = $(this).attr('data-id');
+        console.log(id);
     })
+
+    $(document).on('click', '.btn-help', function() {
+        $('#help-model').show();
+    });
+
+    $('#help-model .btn-model-cc').click(function(e) {
+        $('#help-model').hide();
+    });
 });
