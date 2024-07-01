@@ -2,84 +2,49 @@
 
 @section('body')
     <div class="bacarat-1-page bg-type1">
-        <div class="bg-main"><img src="{{ asset('images/bg1.png') }}" alt="" class="bg-main-1"></div>
-        <header>
-            <div class="header_wrapper">
-                <div class="header-col-L">
-                    <a href="/" class="header-logo">
-                        <img src="{{ asset('images/logo.png') }}" alt="">
-                    </a>
-
-                </div>
-                <div class="header-col-R">
-                    <div class="header-group-btn">
-                        <div class="heeader-btn_item btn-user notranslate">
-                        </div>
-                        <div class="heeader-btn_item btn-credit">
-                        </div>
-                        <div class="heeader-btn_item btn-help">
-                        </div>
-                        <div class="heeader-btn_item btn-help">
-                        </div>
-                        <div class="heeader-btn_item btn-logout">
-                        </div>
+        @include('client.header')
+        <section class="slectgame-slide">
+            <div class="slectgame_inner col-9 detail_game_inner">
+                <div class="row">
+                    <div class="col-4 ava1">
+                        <img height="440px" alt="ava1" src="{{ asset('images/ava1.png') }}">
                     </div>
-                    <div class="hamburger">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
-                        <div class="bar4"></div>
+                    <div class="col-8 ava2">
+                        <div class="d-flex">
+                            <div class="img-parent">
+                                <img alt="" src="{{ asset('images/ka.png') }}" height="35px">
+                            </div>
+                            <div class="img-child">
+                                <img alt="" src="{{ asset('images/cq9.png') }}" height="45px">
+                            </div>
+                            <div class="title">
+                                APP HACK SLOT PRO
+                            </div>
+                        </div>
+                        <div class="count-down">
+                            <div class="count-down-title">ĐẾM NGƯỢC</div>
+                            <div class="count-down-title count-down-time" id="count-down-time"></div>
+                            <div class="count-down-image">
+                            <img alt="" src="{{ asset('images/1.png') }}" >
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <img alt="" src="{{ asset('images/3_6.png') }}">
+                        </div>
+                        <div class="mt-3">
+                            <img alt="" src="{{ asset('images/4_1.png') }}">
+                        </div>
                     </div>
                 </div>
             </div>
-        </header>
-        <div class="slotPage">
-            <section class="slectgame-slide">
-                <div class="slectgame_inner">
-                    <div class="title-Page">
-                        <div class="btn-back">
-                            <p>Quay lại</p>
-                        </div>
-                        <h1>{{ $game->name }}</h1>
-                    </div>
-                    <div class="innerPage_wrapper">
-                        <div class="sec-picNname">
-                            <div class="pic square" style="width: 30% !important;">
-                                <img alt="" src="{{ asset('images/'.$game->image_url) }}">
-                            </div>
-                            <div class="sec-circle square" style="width: 50% !important;">
-                                <div class="circle square">
-                                    <div class="bg-1"></div>
-                                    <div class="frame-1"></div>
-                                    <div class="frame-2 winRate-highlight-green">
-                                        <p>Tỉ lệ</p>
-                                        <h1 class="notranslate">97</h1>
-                                    </div>
-                                    <div class="frame-3"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sec-picNname">
-                            <div class="sec-circle square" style="width: 30% !important;">
-                                <div class="circle square">
-                                    <div class="frame-1 no-animation"></div>
-                                    <div class="frame-2 no-bg">
-                                        <h1 class="txt-time">29:50</h1>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+        </section>
     </div>
 @endsection
 
 @section('js')
-    <script>
+    <!-- <script>
         var GlobalGameSlug = '{{ $game->slug }}';
         var GlobalGameId = '{{ $game->id }}';
-    </script>
+    </script> -->
     <script src="{{ asset('js/game-detail.js') }}"></script>
 @endsection
