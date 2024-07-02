@@ -8,7 +8,7 @@
       <div class="bacarat-1-page bg-type1">
         @include('client.header')
         <section class="slectgame-slide">
-          <div class="slectgame_inner col-8 slectslot_inner">
+          <div class="slectgame_inner col-md-8 col-11 slectslot_inner">
             <div class="title-Page">
               <div class="btn-back">
               <img src="{{ asset('images/333.png') }}" alt="back">

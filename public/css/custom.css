@@ -17,7 +17,7 @@
     border: 1px solid #fff;
     border-radius: 30px;
     color: #fff;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 1;
     transition: 1s;
     width: 100%;
@@ -30,7 +30,7 @@
     border: 1px solid #fff;
     border-radius: 30px;
     color: #fff;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 1;
     width: 100%;
 }
@@ -103,12 +103,6 @@ header .header-col-R .header-group-btn .btn-tele:before {
     z-index: 10;
 }
 
-@media only screen and (max-width: 768px) {
-    .game-item-top {
-      display: block !important;
-    }
-}
-
 .bg-login{
     background-image: url(../images/bg-login-model.png) !important;
     background-repeat: no-repeat;
@@ -117,7 +111,7 @@ header .header-col-R .header-group-btn .btn-tele:before {
     border: unset !important;
     border-radius: unset !important;
     box-shadow: unset !important;
-    min-height: 430px;
+    height: 430px;
     max-width: 730px !important;
 }
 
@@ -269,4 +263,80 @@ body{
     position: absolute;
     bottom: 10px;
     width: 80px;
+}
+.q-register{
+    text-align: center;
+    margin-top: 25px;
+    color: #fff;
+    font-weight: 400;
+    font-style: italic;
+}
+.q-register span{
+    color: #00FF75;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .game-item-top {
+      display: block !important;
+    }
+    body{
+        background-image: url(../images/BG_MB1.png);
+        background-size: cover;
+    }
+    .bg-login{
+        background-image: url(../images/DN_1.png) !important;
+        background-size: contain;
+    }
+    #coinform .btn-model-cc, #loginform .btn-model-cc, #registerform .btn-model-cc,
+    #coinform .btn-model-cf, #loginform .btn-model-cf, #registerform .btn-model-cf {
+        font-size: 20px;
+    }
+    .slot_wrapper{
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        max-height: 500px !important;
+        overflow: scroll !important;
+    }
+    .slectgame-slide .slectgame_inner{
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .slectslot_inner{
+        background-image: url(../images/KA_2.png);
+        height: 500px;
+    }
+    .title-Page .btn-back {
+        left: 5px !important;
+        top: 5px !important;
+    }
+    .btn-back img{
+        width: 100px;
+    }
+    .slectgame-slide {
+        padding: 60px 20px 0px !important;
+    }
+    .slectgame-slide .title-Page {
+        margin: 50px auto 0px !important;
+    }
+    .slot_detail_wrapper{
+        display: block !important;
+        max-height: 350px !important;
+    }
+    .slot_item{
+        margin-bottom: 20px;
+    }
+    .header-col-L{
+        display: flex;
+        justify-content: center;
+    }
+    .header-col-R{
+        position: absolute;
+        top: 15px;
+    }
+    .header_wrapper{
+        position: relative;
+        display: block !important;
+    }
 }

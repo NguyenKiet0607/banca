@@ -21,6 +21,9 @@
                 <div class="btn btn-model-cf">Huỷ thao tác</div>
                 <button type="submit" class="btn btn-model-cc"> Đăng nhập </button>
             </div>
+            <div class="q-register">
+                Chưa có tài khoản? <span class="btn-register">Đăng ký</span>
+            </div>
         </form>
     </div>
 </div>

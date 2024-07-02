@@ -11,7 +11,7 @@
         <div class="index-page_wrapper">
             <div class="group-img">
                 <div class="name-site">
-                    <img height="205px" width="896px" src="{{ asset('images/logo.png') }}" alt="">
+                    <img width="896px" src="{{ asset('images/logo.png') }}" alt="">
                 </div>
             </div>
             <div class="gruop-btn">
