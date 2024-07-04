@@ -1,5 +1,8 @@
 
 $(document).ready(function() {
+    var userId;
+    var coin;
+    getProfile();
     $(document).on('click', '.btn-coin', function() {
         $('#coin-model').show();
     });
@@ -36,11 +39,6 @@ $(document).ready(function() {
         $('#coin-model').hide();
     });
 
-    $('.detail-game').click(function() {
-        let id = $(this).attr('data-id');
-        console.log(id);
-    })
-
     $(document).on('click', '.btn-help', function() {
         $('#help-model').show();
     });
@@ -48,4 +46,25 @@ $(document).ready(function() {
     $('#help-model .btn-model-cc').click(function(e) {
         $('#help-model').hide();
     });
+
+    $('#coin-alert-model .btn-model-cc').click(function(e) {
+        $('#coin-alert-model').hide();
+    });
+
+    function getProfile()
+    {
+        $.ajax({
+            url: '/api/user/current',
+            method: 'GET',
+            success: function(data) {
+                userId = data.result.id;
+                coin = data.result.coin;
+                if(coin <= 0) {
+                    $('#coin-alert-model').show();
+                }
+                $('#coin').text(data.result.coin);
+                $('#user-name').text(data.result.name);
+            }
+        })
+    }
 });

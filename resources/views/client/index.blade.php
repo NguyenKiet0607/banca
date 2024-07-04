@@ -14,9 +14,11 @@
                 </div>
                 <div class="slot_wrapper">
                     @foreach($games as $game)
-                        <div data-id="{{ $game->id }}" class="detail-game">
-                            <img src="{{ asset('images/'.$game->image_url) }}" alt="jili">
-                        </div>
+                        <a href="{{ route('slot', $game->slug) }}">
+                            <div data-id="{{ $game->id }}" class="detail-game">
+                                <img src="{{ asset('images/'.$game->image_url) }}" alt="jili">
+                            </div>
+                        </a>
                     @endforeach
                 
                 </div>

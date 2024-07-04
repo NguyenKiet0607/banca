@@ -17,14 +17,16 @@
             </div>
             <div class="slot_wrapper slot_detail_wrapper">
               @foreach($slots as $slot)
-              <div class="slot_item">
-                <div class="slot_image">
-                  <img alt="slot image" src="{{ asset('images/'.$slot->image_url) }}">
+              <a href="{{ route('detail-slot', [$slot->slug, $slot->id]) }}">
+                <div class="slot_item">
+                  <div class="slot_image">
+                    <img alt="slot image" src="{{ asset('images/'.$slot->image_url) }}">
+                  </div>
+                  <div class="slot_title">{{ $slot->name }}</div>
+                  <div class="slot_percent_1">{{ $slot->percent }}%</div>
+                  <div class="slot_percent_2">{{ $slot->percent }}%</div>
                 </div>
-                <div class="slot_title">{{ $slot->name }}</div>
-                <div class="slot_percent_1">{{ $slot->percent }}%</div>
-                <div class="slot_percent_2">50%</div>
-              </div>
+              </a>
               @endforeach
             </div>
           </div>

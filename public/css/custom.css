@@ -200,6 +200,7 @@ body{
     border: 1px solid #00FF84 !important;
     padding: 40px !important;
     background-color: unset !important;
+    max-width: 1000px;
 }
 .ava1{
     padding-left: 10px;

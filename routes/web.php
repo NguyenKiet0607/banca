@@ -18,9 +18,9 @@ Route::post('/login', 'App\Http\Controllers\User\AuthController@login')->name('a
 Route::post('/register', 'App\Http\Controllers\User\UserController@store');
 
 Route::middleware('user.login')->group(function (){
-    Route::get('/', 'App\Http\Controllers\User\GameController@index');
-    Route::get('/slot/{slug}', 'App\Http\Controllers\User\GameController@slot');
-    Route::get('/game/{slug}/{id}', 'App\Http\Controllers\User\GameController@detailSlot');
+    Route::get('/', 'App\Http\Controllers\User\GameController@index')->name('top-page');
+    Route::get('/slot/{slug}', 'App\Http\Controllers\User\GameController@slot')->middleware('check.coin')->name('slot');
+    Route::get('/game/{slug}/{id}', 'App\Http\Controllers\User\GameController@detailSlot')->middleware('check.coin')->name('detail-slot');
     Route::post('/logout', 'App\Http\Controllers\User\AuthController@logout');
     Route::post('/code', 'App\Http\Controllers\User\UserController@code')->name('code');
     Route::prefix('api')->group(function() {

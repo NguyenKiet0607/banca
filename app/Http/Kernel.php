@@ -71,5 +71,6 @@ class Kernel extends HttpKernel
         'admin.admin' => \App\Http\Middleware\CheckAdmin::class,
         'admin.develop' => \App\Http\Middleware\CheckDevelop::class,
         'api.login' => \App\Http\Middleware\CheckLoggedIn::class,
+        'check.coin' => \App\Http\Middleware\CheckCoin::class
     ];
 }

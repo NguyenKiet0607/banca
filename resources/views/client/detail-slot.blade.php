@@ -4,7 +4,7 @@
     <div class="bacarat-1-page bg-type1">
         @include('client.header')
         <section class="slectgame-slide">
-            <div class="slectgame_inner col-9 detail_game_inner">
+            <div class="slectgame_inner detail_game_inner">
                 <div class="row">
                     <div class="col-4 ava1">
                         <img height="440px" alt="ava1" src="{{ asset('images/ava1.png') }}">

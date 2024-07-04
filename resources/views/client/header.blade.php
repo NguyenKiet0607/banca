@@ -8,11 +8,9 @@
         </div>
         <div class="header-col-R">
             <div class="header-group-btn">
+                <div class="heeader-btn_item" id="user-name"></div>
                 <div class="heeader-btn_item">
-                    Tên tài khoản
-                </div>
-                <div class="heeader-btn_item">
-                    Xu 890
+                    Xu <div class="ml-1" id="coin"></div>
                 </div>
                 <div class="heeader-btn_item btn-coin">
                     Nạp xu
