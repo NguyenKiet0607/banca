@@ -191,7 +191,7 @@ body{
 .btn-help{
     cursor: pointer;
 }
-.detail_game_inner{
+.detail_game_inner1{
     background-image: url(../images/sdsdsdsd1.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -276,6 +276,17 @@ body{
     color: #00FF75;
     cursor: pointer;
 }
+.percentage{
+    position: absolute;
+    top: 30px;
+    right: 110px;
+    font-size: 40px;
+    color: #22D94F;
+    font-weight: bold;
+}
+.detail_game_inner2{
+    display: none;
+}
 
 
 @media only screen and (max-width: 768px) {
@@ -339,5 +350,59 @@ body{
     .header_wrapper{
         position: relative;
         display: block !important;
+    }
+    .detail_game_inner1{
+        display: none;
+    }
+    .detail_game_inner2{
+        background-image: url(../images/KA_2.png);
+        height: 500px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: unset !important;
+        border: 1px solid #00FF84 !important;
+        margin: 0 auto;
+        display: block;
+    }
+    .avatar-game{
+        background-image: url(../images/Vector-Smart-Object.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 110px;
+        padding: 15px 15px 20px;
+    }
+    .percent-game{
+        background-image: url(../images/Ellipse_1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 114px;
+        position: relative;
+    }
+    .percent-game div{
+        position: absolute;
+        top: 50px;
+        left: 36px;
+        color: #fff;
+        font-weight: 700;
+    }
+    .count-down-wrapper{
+        background-image: url(../images/Vector-Smart-Object_1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        width: 120px;
+        height: 120px;
+    }
+    .count-down-time{
+        left: 30px;
+        bottom: 40px;
+        font-size: 24px;
+        position: absolute;
+        color: #fff;
+        font-weight: 700;
+    }
+    .percentage{
+        font-size: 16px;
+        right: unset;
     }
 }
