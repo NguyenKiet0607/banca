@@ -7,18 +7,29 @@
 
         </div>
         <div class="header-col-R">
-            <div class="header-group-btn">
-                <div class="heeader-btn_item" id="user-name"></div>
-                <div class="heeader-btn_item">
-                    Xu <div class="ml-1" id="coin"></div>
+            <!-- <div class="header-mobile"> -->
+                <div class="header-group-btn">
+                    <div class="logo-mobile"><img src="{{ asset('images/logo.png') }}" alt=""></div>
+                    <div class="heeader-btn_item" id="user-name"></div>
+                    <div class="heeader-btn_item">
+                        Xu <span class="ml-1" id="coin"></span>
+                    </div>
+                    <div class="heeader-btn_item btn-coin">
+                        Nạp xu
+                    </div>
+                    <div class="heeader-btn_item btn-help">
+                        Hỗ trợ
+                    </div>
+                    <div class="">
+                        <form action="/logout" method="POST">
+                            {{ csrf_field() }}
+                            <button type="submit">Đăng xuất</button>
+                        </form>
+                        
+                    </div>
                 </div>
-                <div class="heeader-btn_item btn-coin">
-                    Nạp xu
-                </div>
-                <div class="btn-help">
-                    Hỗ trợ
-                </div>
-            </div>
+            <!-- </div> -->
+            
             <div class="hamburger">
                 <div class="bar1"></div>
                 <div class="bar2"></div>

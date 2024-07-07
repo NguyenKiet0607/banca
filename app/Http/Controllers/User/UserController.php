@@ -42,9 +42,9 @@ class UserController extends Controller
         //Validate data
         $input = $request->validate([
             'username' => 'required|min:6|max:20|unique:users',
-            'phone' => 'required|min:10|max:15|unique:users',
-            'phone_zalo' => 'required|min:10|max:15|unique:users',
-            'password' => 'required|min:6|max:20|confirmed',
+            'phone' => 'nullable|min:10|max:15|unique:users',
+            'phone_zalo' => 'nullable|min:10|max:15|unique:users',
+            'password' => 'required|min:6|max:20',
         ],[
             'username.required' => 'Tên tài khoản là bắt buộc',
             'phone.required' => 'Số điện thoại là bắt buộc',

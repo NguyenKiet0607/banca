@@ -1,6 +1,9 @@
 #coinform, #loginform, #registerform{
-    max-width: 400px;
+    max-width: 560px;
     margin: 0 auto;
+}
+#registerform .form-control, #loginform .form-control{
+    border-radius: 20px;
 }
 
 #coinform .form-group_btn, #loginform .form-group_btn, #registerform .form-group_btn{
@@ -8,7 +11,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 0;
-    margin-top: 20px;
 }
 
 #coinform .btn-model-cc, #loginform .btn-model-cc, #registerform .btn-model-cc{
@@ -111,8 +113,8 @@ header .header-col-R .header-group-btn .btn-tele:before {
     border: unset !important;
     border-radius: unset !important;
     box-shadow: unset !important;
-    height: 430px;
-    max-width: 730px !important;
+    height: 475px;
+    max-width: 810px !important;
 }
 
 .form-check{
@@ -287,6 +289,34 @@ body{
 .detail_game_inner2{
     display: none;
 }
+.code-wrapper{
+    overflow: auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 5px 0;
+}
+.code-wrapper label{
+    float: left;
+    color: #969696;
+    padding-top: 10px;
+    font-weight: 400;
+}
+.code-wrapper input{
+    background-color: #256341;
+    color: #fff;
+}
+.code-wrapper div{
+    float: left;
+}
+.logo-mobile{
+    display: none;
+}
+.header-group-btn button{
+    background: unset;
+    border: unset;
+    color: #fff;
+    padding: 0;
+}
 
 
 @media only screen and (max-width: 768px) {
@@ -404,5 +434,34 @@ body{
     .percentage{
         font-size: 16px;
         right: unset;
+    }
+    .header-group-btn{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        /* background: rgba(34, 217, 79, 0.26); */
+        z-index: 1000;
+        display: none;
+    }
+    .header-group-btn{
+        padding: 0 !important;
+        background-color: rgba(6, 50, 31, 0.95) !important;
+    }
+    .header-group-btn div{
+        padding: 25px;
+    }
+    header .header-col-R .header-group-btn .heeader-btn_item{
+        border-right: unset !important;
+    }
+    .logo-mobile{
+        display: block;
+        border-bottom: 2px solid rgba(34, 217, 79, 1);
+        padding: 25px;
+    }
+    #register-model .bg-login{
+        background-image: url(../images/DN_2.jpg) !important;
+        height: 580px !important;
     }
 }

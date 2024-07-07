@@ -11,7 +11,7 @@
           <div class="slectgame_inner col-md-8 col-11 slectslot_inner">
             <div class="title-Page">
               <div class="btn-back">
-              <img src="{{ asset('images/333.png') }}" alt="back">
+                <a href="/"><img src="{{ asset('images/333.png') }}" alt="back"></a>
               </div>
               <h1>{{ $game->name }}</h1>
             </div>

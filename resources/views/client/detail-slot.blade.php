@@ -12,10 +12,10 @@
                     <div class="col-8 ava2">
                         <div class="d-flex">
                             <div class="img-parent">
-                                <img alt="" src="{{ asset('images/ka.png') }}" height="35px">
+                                <img alt="" src="{{ asset('images/'.$gameParent->image_url) }}" height="35px">
                             </div>
                             <div class="img-child">
-                                <img alt="" src="{{ asset('images/cq9.png') }}" height="45px">
+                                <img alt="" src="{{ asset('images/'.$game->image_url) }}" height="45px">
                             </div>
                             <div class="title">
                                 APP HACK SLOT PRO
@@ -41,7 +41,7 @@
             <div class=".slectslot_inner detail_game_inner2 col-11">
                 <div class="title-Page">
                     <div class="btn-back">
-                        <img src="{{ asset('images/333.png') }}" alt="back">
+                        <a href="/slot/{{ $gameParent->slug }}"><img src="{{ asset('images/333.png') }}" alt="back"></a>
                     </div>
                     <h1>{{ $game->name }}</h1>
                 </div>

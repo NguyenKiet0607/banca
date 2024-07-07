@@ -50,6 +50,21 @@ $(document).ready(function() {
     $('#coin-alert-model .btn-model-cc').click(function(e) {
         $('#coin-alert-model').hide();
     });
+    $('.hamburger').click(function(e) {
+        $('.header-group-btn').addClass('header-group-btn_active');
+    });
+    $(document).mouseup(function(e) 
+    {
+        var container = $(".header-group-btn");
+        var container2 = $(".hamburger");
+
+        // if the target of the click isn't the container nor a descendant of the container
+        if (!container.is(e.target) && container.has(e.target).length === 0 &&
+        !container2.is(e.target) && container2.has(e.target).length === 0) 
+        {
+            container.removeClass('header-group-btn_active');
+        }
+    });
 
     function getProfile()
     {
@@ -63,7 +78,7 @@ $(document).ready(function() {
                     $('#coin-alert-model').show();
                 }
                 $('#coin').text(data.result.coin);
-                $('#user-name').text(data.result.name);
+                $('#user-name').text(data.result.username);
             }
         })
     }

@@ -751,7 +751,7 @@ header .header-col-R .hamburger:hover .bar3 {
     header .header-col-R .header-group-btn {
         background-color: rgba(0, 0, 0);
         display: grid;
-        grid-template-rows: auto auto auto auto 1fr;
+        grid-template-rows: auto auto auto auto auto 1fr;
         height: 100%;
         left: 0;
         opacity: 0;
@@ -759,7 +759,7 @@ header .header-col-R .hamburger:hover .bar3 {
         position: fixed;
         top: 0;
         visibility: hidden;
-        width: 100%;
+        width: 70%;
     }
     header .header-col-R .header-group-btn_active {
         opacity: 1;
@@ -848,9 +848,6 @@ header .header-col-R .hamburger:hover .bar3 {
     }
     header .header-col-R .change .bar3 {
         transform: rotate(45deg) translate(-6px, -9px);
-    }
-    header .header-col-R .header-group-btn {
-        padding: 90px 35px 70px;
     }
     header .header-col-R .header-group-btn .heeader-btn_item {
         height: 60px;

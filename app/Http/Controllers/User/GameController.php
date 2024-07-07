@@ -73,7 +73,8 @@ class GameController extends Controller
     public function detailSlot($slug, $id)
     {
         $game = Game::find($id);
-        return view('client/detail-slot', compact('game', 'slug'));
+        $gameParent = Game::find($game->parent_id);
+        return view('client/detail-slot', compact('game', 'slug', 'gameParent'));
     }
 
     /**
