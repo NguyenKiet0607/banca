@@ -37,7 +37,9 @@ class UpdatePercent extends Command
 
         //Update tỉ lệ thắng
         foreach($games as $game){
-            $game->percent = $this->generatePercent2($game->percent);
+            $game->percent = $this->generatePercent($game->percent);
+            $round = $this->updateRound($game);
+            $game->fill($round);
             $game->save();
         }
 
@@ -90,5 +92,36 @@ class UpdatePercent extends Command
             // Nếu không, trả về một số ngẫu nhiên trong khoảng đầu tiên
             return mt_rand($ranges[0][0], $ranges[0][1]);
         }
+    }
+
+    /**
+     * Update round when round_end is null or round_end < current time
+     */
+    public function updateRound($game) {
+        $currentTime = now();
+
+        if (is_null($game->round_start) || Carbon::parse($game->round_start)->lessThan($currentTime)) {
+            $roundStart = Carbon::parse($currentTime)->addMinutes(rand(5, 10));
+            $roundEnd = Carbon::parse($roundStart)->addMinutes(rand(8, 15));
+            echo $roundStart;
+            return [
+                'round_start' => $roundStart,
+                'round_end' => $roundEnd,
+                'round_count' => rand(30, 150)
+            ];
+        }
+        //case qua ngay moi
+        if(Carbon::parse($game->round_end)->lessThan(Carbon::parse($game->round_start))){
+            $roundStart = Carbon::parse($game->round_end);
+            $roundEnd = Carbon::parse($roundStart)->addMinutes(rand(8, 15));
+            echo $roundStart;
+            return [
+                'round_start' => $roundStart,
+                'round_end' => $roundEnd,
+                'round_count' => rand(30, 150)
+            ];
+        }
+
+        return [];
     }
 }

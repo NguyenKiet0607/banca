@@ -31,7 +31,8 @@ class User extends Authenticatable implements JWTSubject
         'tenant_code',
         'phone',
         'phone_zalo',
-        'ip'
+        'ip',
+        'expired_time'
     ];
 
     /**

@@ -20,16 +20,15 @@
                     <div class="heeader-btn_item btn-help">
                         Hỗ trợ
                     </div>
-                    <div class="">
-                        <form action="/logout" method="POST">
-                            {{ csrf_field() }}
-                            <button type="submit">Đăng xuất</button>
-                        </form>
-                        
+                    <script>
+                        window.telegramLink = "https://t.me/{{ env('SUPPORT') }}";
+                    </script>
+                    <div class="heeader-btn_item btn-logout1">
+                        Đăng xuất
                     </div>
                 </div>
             <!-- </div> -->
-            
+
             <div class="hamburger">
                 <div class="bar1"></div>
                 <div class="bar2"></div>

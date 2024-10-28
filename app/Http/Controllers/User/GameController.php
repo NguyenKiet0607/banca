@@ -13,7 +13,7 @@ class GameController extends Controller
 {
     public function index()
     {
-        $games = (new Game())->getGame();
+        $games = (new Game())->getParentGames();
         return view('client/index', compact('games'));
     }
 
@@ -21,7 +21,7 @@ class GameController extends Controller
     {
         $game = (new Game())->getGame(['slug' => $slug], true)->first();
         $slots = (new Game())->getGame(['parent_id' => $game->id]);
-        
+
         return view('client/slot', compact('game', 'slots'));
     }
     //List game
@@ -51,6 +51,9 @@ class GameController extends Controller
             if($game->parent_id > 0){
                 $gameParent = Game::find($game->parent_id);
                 $game->parent = $gameParent;
+            }
+            if($game->round_start && $game->round_end){
+                $game->round = Carbon::parse($game->round_start)->format('H:i').' - '.Carbon::parse($game->round_end)->format('H:i');
             }
             return response([
                 'meta' => null,
@@ -95,5 +98,17 @@ class GameController extends Controller
             'status' => 'successful',
             'result' => $data
         ], 200);
+    }
+
+    /**
+     * Get game's round
+     */
+    public function round($slug)
+    {
+        $game = (new Game())->where('slug', $slug)->first();
+        return response([
+            'round' => $game ? Carbon::parse($game->round_start)->format('H:i').' - '.Carbon::parse($game->round_end)->format('H:i') : 'null - null',
+            'count' => $game ? $game->round_count : 'null'
+        ]);
     }
 }

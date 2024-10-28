@@ -23,8 +23,13 @@
                     <img alt="slot image" src="{{ asset('images/'.$slot->image_url) }}">
                   </div>
                   <div class="slot_title">{{ $slot->name }}</div>
-                  <div class="slot_percent_1">{{ $slot->percent }}%</div>
-                  <div class="slot_percent_2">{{ $slot->percent }}%</div>
+                  <div class="slot_percent_1 percent_{{ $slot->id }}">
+                      {{ $slot->percent }}%
+                  </div>
+                  <div class="slot_percent_2 percent_{{ $slot->id }}">{{ $slot->percent }}%</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar"></div>
+                    </div>
                 </div>
               </a>
               @endforeach
@@ -35,8 +40,11 @@
     @endsection
 
     @section('js')
-    <!-- <script>
-      var GlobalGameSlug = '{{ $game->slug }}';
-    </script> -->
-    <!-- <script src="{{ asset('js/game.js') }}"></script> -->
+    <script>
+      var parent_id = '{{ $game->id }}';
+      var decreaseCoinTime = {{ env('DECREASE_COIN_TIME', 30) }}
+      var coin = {{ auth()->user()->coin }};
+      var expired_time = {{ auth()->user()->expired_time }};
+    </script>
+    <script src="{{ asset('js/game.js').'?v=1.0.1' }}"></script>
     @endsection

@@ -14,20 +14,17 @@
             <div class="form-group">
                 <input type="password" class="form-control text-center" placeholder="Mật khẩu" name="password" autocomplete="off" required="">
             </div>
+            <div class="form-group">
+                <input type="password" class="form-control text-center" placeholder="Xác nhận mật khẩu" name="password_confirmation" autocomplete="off" required="">
+            </div>
             <div class="row">
-                <div class="col-md-6 col-12">
+                <div class="col-md-12 col-12">
                     <div class="form-group code-wrapper">
-                        <label class="col-md-6 col-6 col-form-label">Mã giới thiệu</label>
-                        <div class="col-md-6 col-6">
-                            <input type="text" class="form-control text-center" name="intro_code" autocomplete="off">
+                        <div class="col-md-6 col-6 pr-0">
+                            <input type="text" class="form-control text-center" name="register_code" placeholder="Mã đăng nhập">
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-12">
-                    <div class="form-group code-wrapper">
-                        <label class="col-md-6 col-6 col-form-label">Mã đăng nhập</label>
                         <div class="col-md-6 col-6">
-                            <input type="text" class="form-control text-center" name="register_code" autocomplete="off">
+                            <label class="col-form-label" id="captcha">1234</label>
                         </div>
                     </div>
                 </div>

@@ -31,28 +31,33 @@ $(document).ready(function() {
 
     $('#registerform .btn-model-cc').click(function(e) {
         e.preventDefault();
-        $.ajax({
-            url: '/register',
-            method: 'POST',
-            data: $('#registerform').serialize(),
-            success: function(data) {
-                $('#help-model h3').text('Đăng ký thành công.');
-                $('#help-model').show();
-                setTimeout(function(){
-                    window.location.reload();
-                 }, 1000);
-            },
-            error: function(e, data) {
-                console.log(e.responseJSON.message);
-                if(e.status === 422){
-                    $('#help-model h3').text(e.responseJSON.message);
-                }else{
-                    $('#help-model h3').text('Có lỗi xảy ra. Vui lòng liên hệ admin để được hỗ trợ.');
+        if ($('input[name="register_code"]').val() !== $('#captcha').text()){
+            $('#help-model h3').text('Mã đăng nhập không khớp');
+            $('#help-model').show();
+        }else{
+            $.ajax({
+                url: '/register',
+                method: 'POST',
+                data: $('#registerform').serialize(),
+                success: function(data) {
+                    $('#help-model h3').text('Đăng ký thành công.');
+                    $('#help-model').show();
+                    setTimeout(function(){
+                        window.location.reload();
+                     }, 1000);
+                },
+                error: function(e, data) {
+                    if(e.status === 422){
+                        $('#help-model h3').text(e.responseJSON.message);
+                    }else{
+                        $('#help-model h3').text('Có lỗi xảy ra. Vui lòng liên hệ admin để được hỗ trợ.');
+                    }
+                    $('#help-model').show();
+                    $('#captcha').text(Math.floor(1000 + Math.random() * 9000));
                 }
-                $('#help-model').show();
-            }
-        })
-    })
+            });
+        }
+    });
 
     $('#loginform .btn-model-cf').click(function(e) {
         $('#login-model').hide();

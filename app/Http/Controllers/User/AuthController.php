@@ -45,10 +45,10 @@ class AuthController extends Controller
             if ($request->hasSession()) {
                 $request->session()->put('auth.password_confirmed_at', time());
             }
-            //reset creit = 0 if user not login in 3 days
-            if ($user->last_login < now()->subDays(3)) {
-                $user->coin = 0;
-            }
+//            //reset creit = 0 if user not login in 3 days
+//            if ($user->last_login < now()->subDays(3)) {
+//                $user->coin = 0;
+//            }
 
             $user->last_login = now();
 //            //save ip of user login

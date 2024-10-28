@@ -10,12 +10,12 @@
     <meta name="api-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">.
+    <link rel="stylesheet" href="{{ asset('css/custom.css').'?v=1.0.1' }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css').'?v=1.0.0' }}">.
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
     @yield('css')
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script src="{{ asset('js/coin.js') }}"></script>
+    <script src="{{ asset('js/coin.js').'?v=1.0.0' }}"></script>
     <script type="text/javascript">
         $.ajaxSetup({
             headers: {
@@ -42,6 +42,21 @@
             <div class="form-group form-group_btn">
                 <div class="btn btn-model-cc">Huỷ</div>
                 <button type="submit" class="btn btn-model-cf"> Nạp </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="model-logout model-logout_active" style="display: none" id="logout1-model">
+    <div class="model-logout_overlay"></div>
+    <div class="model-logout_wrapper">
+        <div class="model-title">
+            <h1>Đăng xuất</h1>
+        </div>
+        <form id="logoutform"  action="/logout" method="POST" >
+            {{ csrf_field() }}
+            <div class="form-group form-group_btn">
+                <div class="btn btn-model-cc">Huỷ</div>
+                <button type="submit" class="btn btn-model-cf"> Đồng ý</button>
             </div>
         </form>
     </div>

@@ -1,4 +1,4 @@
-#coinform, #loginform, #registerform{
+#coinform, #logoutform, #loginform, #registerform{
     max-width: 560px;
     margin: 0 auto;
 }
@@ -6,14 +6,14 @@
     border-radius: 20px;
 }
 
-#coinform .form-group_btn, #loginform .form-group_btn, #registerform .form-group_btn{
+#coinform .form-group_btn, #logoutform .form-group_btn, #loginform .form-group_btn, #registerform .form-group_btn{
     grid-column-gap: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 0;
 }
 
-#coinform .btn-model-cc, #loginform .btn-model-cc, #registerform .btn-model-cc{
+#coinform .btn-model-cc, #logoutform .btn-model-cc, #loginform .btn-model-cc, #registerform .btn-model-cc{
     animation: btn-item 2s ease-in-out infinite alternate;
     background-image: -webkit-linear-gradient(-90deg, #b8e6fe, #38b3f9 25%, #0470d3 85%, #b8e6fe 115%);
     border: 1px solid #fff;
@@ -26,7 +26,7 @@
     cursor: pointer;
 }
 
-#coinform .btn-model-cf, #loginform .btn-model-cf, #registerform .btn-model-cf{
+#coinform .btn-model-cf,#logoutform .btn-model-cf, #loginform .btn-model-cf, #registerform .btn-model-cf{
     animation: btn-item 2s ease-in-out infinite alternate;
     background-image: -webkit-linear-gradient(-90deg, #f3a2ff, #e324ff 25%, #8c20e5 85%, #ffb4f9 115%);
     border: 1px solid #fff;
@@ -38,6 +38,10 @@
 }
 
 #coinform .error{
+    color: #ff0000;
+    margin-top: 10px;
+}
+#logoutform .error{
     color: #ff0000;
     margin-top: 10px;
 }
@@ -137,13 +141,14 @@ body{
     background-image: url(../images/111.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 490px;
+    width: 100vw; /* 80% of the viewport width */
+    height: 80vh; /* 80% of the viewport height */
     border-radius: unset !important;
     border: 1px solid #00FF84 !important;
 }
 
 .slot_item{
-    background-image: url(../images/Layer_14_1.png);
+    background-image: url(../images/slot_item_bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 230px;
@@ -156,8 +161,8 @@ body{
 }
 .slot_title{
     width: 125px;
-    overflow:hidden; 
-    white-space:nowrap; 
+    overflow:hidden;
+    white-space:nowrap;
     text-overflow: ellipsis;
     color: #fff;
     position: absolute;
@@ -165,14 +170,74 @@ body{
     font-size: 14px;
     font-weight: 700;
 }
-.slot_percent_1{
+.slot_percent_1 {
     color: #fff;
     font-weight: 700;
     position: absolute;
-    right: 31px;
-    top: 36px;
+    right: 10px;
+    bottom: 40px;
     font-size: 14px;
+
+    padding: 30px; /* Optional: Adjust padding as needed */
+    text-align: center; /* Center the text inside the div */
 }
+
+.slot_percent_1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../images/percent_background.png); /* Set the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1; /* Ensure the background image stays behind the text */
+    animation: spin 2s linear infinite; /* Adds the spinning animation */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.progress-bar-container {
+    width: 70%;
+    height: 15px; /* Adjust the height as needed */
+    background-color: rgba(0, 0, 0, 0); /* Background color of the progress bar container */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* Ensures the progress bar stays within the container */
+    bottom: 7px;
+    left: 7px;
+    position: absolute;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 255, 132, 1); /* Color of the progress bar */
+    animation: progress-animation 2s linear infinite; /* Animation for infinite loop */
+    border-radius: 15px; /* Rounded corners */
+}
+
+@keyframes progress-animation {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+
 .slot_percent_2{
     background: linear-gradient(#BDE94B, #2DDA4F);
     -webkit-background-clip: text;
@@ -185,7 +250,7 @@ body{
     bottom: 4px;
 }
 .slot_detail_wrapper{
-    max-height: 300px !important;
+    max-height: 50vh !important;
 }
 .detail-game{
     cursor: pointer;
@@ -261,11 +326,12 @@ body{
     bottom: -15px;
     font-size: 64px;
 }
-.count-down-image{
+.count-down-image {
     right: 40px;
     position: absolute;
     bottom: 10px;
     width: 80px;
+    animation: spin 2s linear infinite; /* Áp dụng animation xoay */
 }
 .q-register{
     text-align: center;
@@ -298,13 +364,9 @@ body{
 .code-wrapper label{
     float: left;
     color: #969696;
-    padding-top: 10px;
     font-weight: 400;
 }
-.code-wrapper input{
-    background-color: #256341;
-    color: #fff;
-}
+
 .code-wrapper div{
     float: left;
 }
@@ -317,14 +379,181 @@ body{
     color: #fff;
     padding: 0;
 }
+#captcha{
+    background: #256341;
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+    height: 38px;
+    color: #fff;
+    font-size: 18px;
+}
 
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+.container {
+    position: relative;
+    display: inline-block; /* Để kích thước của container phù hợp với kích thước của ảnh */
+}
+
+.container img {
+    display: block; /* Đảm bảo ảnh không bị ảnh hưởng bởi các phần tử inline khác */
+}
+
+.progress-bar-a {
+    width: 50%;
+    height: 6px; /* Chiều cao của thanh progress */
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    background-color: transparent; /* Nền trong suốt cho cha */
+    border-radius: 15px;
+}
+
+.progress-bar-a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: fadeInOut 4s linear infinite; /* Áp dụng animation */
+}
+
+.red::before {
+    background: repeating-linear-gradient(
+        -45deg,
+        cadetblue,
+        cadetblue 10px,
+        #fff 10px,
+        #fff 20px
+    );
+    animation-delay: 0s;
+}
+
+.green::before {
+    background: repeating-linear-gradient(
+        -45deg,
+        violet,
+        violet 10px,
+        #fff 10px,
+        #fff 20px
+    );
+    animation-delay: 1s;
+}
+
+.blue::before {
+    background: repeating-linear-gradient(
+        -45deg,
+        darkgreen,
+        darkgreen 10px,
+        #fff 10px,
+        #fff 20px
+    );
+    animation-delay: 2s;
+}
+
+.yellow::before {
+    background: repeating-linear-gradient(
+        -45deg,
+        orangered,
+        orangered 10px,
+        #fff 10px,
+        #fff 20px
+    );
+    animation-delay: 0s;
+}
+
+.progress-bar-a.red {
+    bottom: 35px;
+    left: 110px;
+    right: 200px;
+}
+
+.progress-bar-a.green {
+    bottom: 51px;
+    left: 110px;
+    right: 200px;
+}
+
+.progress-bar-a.blue {
+    bottom: 67px;
+    left: 110px;
+    right: 200px;
+}
+
+.progress-bar-a.yellow {
+    bottom: 83px;
+    left: 110px;
+    right: 200px;
+}
+.round{
+    position: absolute;
+    top: 33px;
+    left: 25px;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    background-image: linear-gradient(#3aed1a, #14461e);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.text-line {
+    position: absolute;
+    left: 25%;
+    transform: translateX(-50%);
+
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#text-line1 {
+    top: 24px;
+    font-size: 24px;
+    background: linear-gradient(#3aed1a, #14461e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#text-line2 {
+    top: 54px; /* Điều chỉnh để hiển thị bên dưới dòng đầu tiên */
+    font-size: 14px;
+ /*//   background-image: linear-gradient(#3aed1a, #14461e);*/
+}
+
+#round-modal h1{
+    font-size: 36px;
+}
+#round-modal .round_count{
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+}
+.add_round_class{
+    width: 262px;
+    text-align: center;
+}
 
 @media only screen and (max-width: 768px) {
     .game-item-top {
       display: block !important;
     }
     body{
-        background-image: url(../images/BG_MB1.png);
+        background-image: url(../images/bg_MB1.png);
         background-size: cover;
     }
     .bg-login{
@@ -337,8 +566,8 @@ body{
     }
     .slot_wrapper{
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        max-height: 500px !important;
+        grid-template-columns: 1fr 1fr  !important;
+        max-height: 70vh !important;
         overflow: scroll !important;
     }
     .slectgame-slide .slectgame_inner{
@@ -347,7 +576,7 @@ body{
     }
     .slectslot_inner{
         background-image: url(../images/KA_2.png);
-        height: 500px;
+        height: 80vh;
     }
     .title-Page .btn-back {
         left: 5px !important;
@@ -364,7 +593,7 @@ body{
     }
     .slot_detail_wrapper{
         display: block !important;
-        max-height: 350px !important;
+        max-height: 60vh !important;
     }
     .slot_item{
         margin-bottom: 20px;
@@ -401,20 +630,60 @@ body{
         width: 110px;
         padding: 15px 15px 20px;
     }
-    .percent-game{
-        background-image: url(../images/Ellipse_1.png);
+    .percent-game {
+        width: 114px;
+        height: 114px; /* Đặt chiều cao cho phần tử */
+        position: relative; /* Đặt position relative cho cha */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Đảm bảo phần tử con không vượt ra ngoài */
+    }
+
+    .background {
+        background-image: url(../images/percent_background.png);
         background-repeat: no-repeat;
         background-size: cover;
-        width: 114px;
-        position: relative;
+        width: 100%;
+        height: 100%;
+        position: absolute; /* Đặt position absolute cho phần tử con */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0deg); /* Đặt nền ở trung tâm và bắt đầu xoay từ 0 độ */
+        animation: spin 2s linear infinite; /* Thêm animation xoay tròn */
     }
-    .percent-game div{
-        position: absolute;
-        top: 50px;
-        left: 36px;
-        color: #fff;
-        font-weight: 700;
+
+    /* Định nghĩa keyframes cho animation xoay tròn */
+    @keyframes spin {
+        from {
+            transform: translate(-50%, -50%) rotate(0deg); /* Bắt đầu từ 0 độ */
+        }
+        to {
+            transform: translate(-50%, -50%) rotate(360deg); /* Xoay đến 360 độ */
+        }
     }
+
+    .percentage {
+        position: relative; /* Đặt position relative để giữ vị trí của text */
+        z-index: 1; /* Đảm bảo text nằm trên nền */
+        font-size: 16px; /* Điều chỉnh kích thước chữ nếu cần */
+        color: #fff; /* Điều chỉnh màu chữ nếu cần */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top:0;
+    }
+    /*.percentage {*/
+    /*    position: relative; !* Đặt position relative để giữ vị trí của text *!*/
+    /*    z-index: 1; !* Đảm bảo text nằm trên nền *!*/
+    /*}*/
+    /*.percent-game div{*/
+    /*    !*position: absolute;*!*/
+    /*    top: 50px;*/
+    /*    !*left: 36px;*!*/
+    /*    color: #fff;*/
+    /*    font-weight: 700;*/
+    /*}*/
     .count-down-wrapper{
         background-image: url(../images/Vector-Smart-Object_1.png);
         background-repeat: no-repeat;
@@ -463,5 +732,43 @@ body{
     #register-model .bg-login{
         background-image: url(../images/DN_2.jpg) !important;
         height: 580px !important;
+    }
+    .round{
+        position: unset;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .text-line-mobile {
+        position: unset;
+        display: flex;
+        justify-content: center;
+
+        color: #fff;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    #text-line1-mobile {
+        top: 24px;
+        font-size: 24px;
+        margin-top: 20px;
+        background: linear-gradient(#3aed1a, #14461e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #text-line2-mobile {
+        top: 24px; /* Điều chỉnh để hiển thị bên dưới dòng đầu tiên */
+        font-size: 14px;
+        /*//   background-image: linear-gradient(#3aed1a, #14461e);*/
+    }
+
+    .add_round_class{
+        flex-direction: column;
+        width: unset;
     }
 }

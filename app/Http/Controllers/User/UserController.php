@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -27,12 +28,16 @@ class UserController extends Controller
     public function decreaseCoin()
     {
         $user = auth()->user();
-        $user->coin = $user->coin > 1 ? $user->coin - 1 : 0;
+        $user->expired_time = $user->expired_time > 0 ? $user->expired_time - 2 :
+            ($user->coin > 0 ? $user->coin*env('DECREASE_COIN_TIME', 30) - 2 : 0);
+
+        $user->coin = ceil($user->expired_time/env('DECREASE_COIN_TIME', 30));
         $user->save();
 
         return response([
             'status' => 'successful',
-            'result' => $user->coin
+            'coin' => $user->coin,
+            'expired_time' => $user->expired_time
         ]);
     }
 
@@ -40,16 +45,17 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //Validate data
-        $input = $request->validate([
-            'username' => 'required|min:6|max:20|unique:users',
-            'phone' => 'nullable|min:10|max:15|unique:users',
-            'phone_zalo' => 'nullable|min:10|max:15|unique:users',
-            'password' => 'required|min:6|max:20',
-        ],[
+        $validator = Validator::make($request->all(), [
+            'username' => 'bail|required|min:6|max:20|unique:users',
+            'phone' => 'bail|nullable|min:10|max:15|unique:users',
+            'phone_zalo' => 'bail|nullable|min:10|max:15|unique:users',
+            'password' => 'bail|required|min:6|max:20|confirmed',
+         ],[
             'username.required' => 'Tên tài khoản là bắt buộc',
             'phone.required' => 'Số điện thoại là bắt buộc',
             'phone_zalo.required' => 'Số điện thoại zalo/tele là bắt buộc',
             'password.required' => 'Mật khẩu là bắt buộc',
+            'password.confirmed' => 'Mật khẩu không khớp',
             'username.min' => 'Tên tài khoản từ 6 đến 20 ký tự',
             'username.max' => 'Tên tài khoản từ 6 đến 20 ký tự',
             'phone.min' => 'Số điện thoại từ 10 đến 15 ký tự',
@@ -64,6 +70,14 @@ class UserController extends Controller
             'phone_zalo.unique' => 'Số điện thoại zalo/tele đã tồn tại',
 
         ]);
+        if($validator->fails()) {
+            $error = $validator->errors()->first();
+            return response()->json([
+                'message' => $error
+            ], 422);
+        }
+
+        $input = $validator->validated();
 
         try{
             $user = new User();

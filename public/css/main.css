@@ -2140,9 +2140,9 @@ label {
 .slot_wrapper {
     grid-gap: 20px 50px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr  1fr;
     margin: 20px auto 0;
-    max-height: 380px;
+    max-height: 70vh;
     overflow: scroll;
     width: -moz-fit-content;
     width: fit-content;

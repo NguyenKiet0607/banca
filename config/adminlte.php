@@ -298,7 +298,7 @@ return [
             'role' => ['1'] //superadmin
         ],
         [
-            'text' => 'Khách hàng SHB',
+            'text' => 'Khách hàng',
             'url'  => '/admin/users',
             'icon' => 'fas fa-fw fa-user',
             'active' => ['users', 'users*'],
@@ -317,6 +317,13 @@ return [
             'icon' => 'fas fa-fw fa-gamepad',
             'active' => ['games', 'games*'],
            'role' => ['3'] //develop
+        ],
+        [
+            'text' => 'Cấu hình',
+            'url'  => '/admin/config',
+            'icon' => 'fas fa-user-secret',
+            'active' => ['admins', 'admins*'],
+            'role' => ['1'] //superadmin
         ]
     ],
 
